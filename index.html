@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="RB Centro Estético - Tu belleza, nuestro cuidado. Tratamientos faciales, corporales y más.">
+    <title>RB Centro Estético</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #FDFBF7;
+            /* Nude / Warm White */
+            --secondary: #D8B4B4;
+            /* Dusty Rose */
+            --accent: #D4AF37;
+            /* Gold Accent */
+            --text-dark: #2C2C2C;
+            /* Charcoal */
+            --text-light: #666666;
+            /* Gray */
+            --white: #FFFFFF;
+
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--primary);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .brand {
+            font-family: var(--font-heading);
+            font-weight: 400;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Typography */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent);
+            margin: 1rem auto 0;
+            transition: width 0.3s ease;
+        }
+
+        .section-title:hover::after {
+            width: 100px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--text-dark);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--text-dark);
+            border-color: var(--text-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-dark);
+            border-color: var(--text-dark);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--text-dark);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-color: var(--secondary);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            mix-blend-mode: multiply;
+            transform: scale(1.05);
+            animation: slowZoom 20s ease-out infinite alternate;
+        }
+
+        @keyframes slowZoom {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s forwards 0.3s;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s forwards 0.6s;
+        }
+
+        .hero-btn {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s forwards 0.9s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 5%;
+            background-color: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: var(--primary);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-img-wrap {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .service-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .service-card:hover .service-img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .service-icon {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 5%;
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .about-img-wrap {
+            flex: 1;
+            position: relative;
+            padding-right: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .about-img-wrap::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80%;
+            height: 80%;
+            background-color: var(--secondary);
+            z-index: -1;
+            border-radius: 10px;
+        }
+
+        .about-img {
+            border-radius: 10px;
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-content {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(40px);
+            transition: var(--transition);
+        }
+
+        .about-content.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-subtitle {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .about-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .about-text {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 8rem 5%;
+            background-color: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: var(--transition);
+        }
+
+        .gallery-item.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(44, 44, 44, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-icon {
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Call to Action */
+        .cta {
+            padding: 6rem 5%;
+            background-color: var(--secondary);
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-text {
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .cta .btn-primary {
+            background-color: var(--white);
+            color: var(--text-dark);
+        }
+
+        .cta .btn-primary:hover {
+            background-color: var(--text-dark);
+            color: var(--white);
+            border-color: var(--text-dark);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 4rem 5% 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about {
+                flex-direction: column;
+                padding: 5rem 5%;
+            }
+
+            .about-img-wrap {
+                padding-right: 0;
+                padding-bottom: 0;
+                width: 100%;
+            }
+
+            .about-img-wrap::before {
+                display: none;
+            }
+
+            .about-img {
+                height: 400px;
+            }
+
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: var(--white);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: var(--transition);
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="brand">RB Centro.</a>
+
+        <button class="nav-toggle" id="navToggle">
+            <i data-feather="menu"></i>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#inicio" class="nav-link">Inicio</a></li>
+            <li><a href="#servicios" class="nav-link">Servicios</a></li>
+            <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+            <li><a href="#galeria" class="nav-link">Galería</a></li>
+            <li><a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="btn btn-outline"
+                    style="padding: 0.5rem 1.5rem; font-size: 0.8rem;">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <!-- Main background image -->
+        <img src="assets/rb.centroestetico_/B-N00JVhm7O/B-N00JVhm7O.jpg" alt="RB Centro Estético Background"
+            class="hero-bg">
+
+        <div class="hero-content">
+            <h1 class="hero-title">Tu belleza,<br>nuestro cuidado.</h1>
+            <p class="hero-subtitle">Descubrí tu mejor versión en nuestro centro de estética integral.</p>
+            <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="btn btn-primary hero-btn">
+                Reserva tu Turno <i data-feather="arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+
+            <div class="service-card animate-on-scroll">
+                <div class="service-img-wrap">
+                    <img src="assets/rb.centroestetico_/B-Ntg2jBEda/B-Ntg2jBEda.jpg" alt="Tratamientos Faciales"
+                        class="service-img">
+                </div>
+                <div class="service-content">
+                    <i data-feather="smile" class="service-icon"></i>
+                    <h3 class="service-title">Faciales</h3>
+                    <p class="service-desc">Limpieza profunda, hidratación y rejuvenecimiento para lucir una piel
+                        radiante y saludable.</p>
+                </div>
+            </div>
+
+            <div class="service-card animate-on-scroll" style="transition-delay: 0.2s;">
+                <div class="service-img-wrap">
+                    <img src="assets/rb.centroestetico_/B-NtiefBvLt/B-NtiefBvLt.jpg" alt="Tratamientos Corporales"
+                        class="service-img">
+                </div>
+                <div class="service-content">
+                    <i data-feather="activity" class="service-icon"></i>
+                    <h3 class="service-title">Corporales</h3>
+                    <p class="service-desc">Reducción, tonificación y relajación. Tratamientos personalizados para
+                        moldear tu figura.</p>
+                </div>
+            </div>
+
+            <div class="service-card animate-on-scroll" style="transition-delay: 0.4s;">
+                <div class="service-img-wrap">
+                    <img src="assets/rb.centroestetico_/B-NtlDXBu1g/B-NtlDXBu1g.jpg" alt="Aparatología"
+                        class="service-img">
+                </div>
+                <div class="service-content">
+                    <i data-feather="sun" class="service-icon"></i>
+                    <h3 class="service-title">Tecnología</h3>
+                    <p class="service-desc">Equipamiento de última generación para garantizar los mejores resultados en
+                        cada sesión.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nosotros">
+        <div class="about-img-wrap">
+            <img src="assets/rb.centroestetico_/B-NtmlNBsUk/B-NtmlNBsUk.jpg" alt="Sobre RB Centro" class="about-img">
+        </div>
+        <div class="about-content animate-on-scroll">
+            <span class="about-subtitle">Nuestra Esencia</span>
+            <h2 class="about-title">El arte de cuidar de vos.</h2>
+            <p class="about-text">En RB Centro Estético creemos que la belleza exterior es un reflejo de tu bienestar
+                interior. Nos dedicamos a brindar una experiencia relajante y transformadora, utilizando productos de
+                primera calidad y las técnicas más innovadoras del mercado.</p>
+            <p class="about-text">Nuestro equipo de profesionales te acompañará en cada paso para asegurar que alcances
+                los resultados que deseás, en un ambiente diseñado especialmente para tu confort y tranquilidad.</p>
+            <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="btn btn-outline">
+                Conocé más <i data-feather="instagram"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="galeria">
+        <h2 class="section-title">Galería</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item animate-on-scroll">
+                <img src="assets/rb.centroestetico_/B-NtpE5hFxE/B-NtpE5hFxE.jpg" class="gallery-img" alt="Gallery">
+                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
+                    <i data-feather="instagram" class="gallery-icon"></i>
+                </a>
+            </div>
+            <div class="gallery-item animate-on-scroll" style="transition-delay: 0.1s;">
+                <img src="assets/rb.centroestetico_/B-NtrQnhkoD/B-NtrQnhkoD.jpg" class="gallery-img" alt="Gallery">
+                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
+                    <i data-feather="instagram" class="gallery-icon"></i>
+                </a>
+            </div>
+            <div class="gallery-item animate-on-scroll" style="transition-delay: 0.2s;">
+                <img src="assets/rb.centroestetico_/B-NttLcB0E2/B-NttLcB0E2.jpg" class="gallery-img" alt="Gallery">
+                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
+                    <i data-feather="instagram" class="gallery-icon"></i>
+                </a>
+            </div>
+            <div class="gallery-item animate-on-scroll" style="transition-delay: 0.3s;">
+                <img src="assets/rb.centroestetico_/B-Ntun5B_h9/B-Ntun5B_h9.jpg" class="gallery-img" alt="Gallery">
+                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
+                    <i data-feather="instagram" class="gallery-icon"></i>
+                </a>
+            </div>
+            <div class="gallery-item animate-on-scroll" style="transition-delay: 0.4s;">
+                <img src="assets/rb.centroestetico_/B-Ntw3LhlsJ/B-Ntw3LhlsJ.jpg" class="gallery-img" alt="Gallery">
+                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
+                    <i data-feather="instagram" class="gallery-icon"></i>
+                </a>
+            </div>
+            <div class="gallery-item animate-on-scroll" style="transition-delay: 0.5s;">
+                <img src="assets/rb.centroestetico_/B-nUImfnTDi/B-nUImfnTDi.jpg" class="gallery-img" alt="Gallery">
+                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
+                    <i data-feather="instagram" class="gallery-icon"></i>
+                </a>
+            </div>
+            <div class="gallery-item animate-on-scroll" style="transition-delay: 0.6s;">
+                <img src="assets/rb.centroestetico_/B-NwS4kjaUp/B-NwS4kjaUp.jpg" class="gallery-img" alt="Gallery">
+                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
+                    <i data-feather="instagram" class="gallery-icon"></i>
+                </a>
+            </div>
+            <div class="gallery-item animate-on-scroll" style="transition-delay: 0.7s;">
+                <img src="assets/rb.centroestetico_/B-NxekFB_v4/B-NxekFB_v4.jpg" class="gallery-img" alt="Gallery">
+                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
+                    <i data-feather="instagram" class="gallery-icon"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <h2 class="cta-title">¿Lista para tu transformación?</h2>
+        <p class="cta-text">Contactanos ahora y agendá tu sesión personalizada.</p>
+        <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="btn btn-primary">
+            Agenda Vía Instagram <i data-feather="message-circle"></i>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h2 class="footer-logo brand">RB Centro.</h2>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="social-link">
+                <i data-feather="instagram"></i>
+            </a>
+            <a href="#" class="social-link">
+                <i data-feather="facebook"></i>
+            </a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RB Centro Estético. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = navLinks.classList.contains('active') ? 'x' : 'menu';
+            navToggle.innerHTML = `<i data-feather="${icon}"></i>`;
+            feather.replace();
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                navToggle.innerHTML = `<i data-feather="menu"></i>`;
+                feather.replace();
+            });
+        });
+
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>

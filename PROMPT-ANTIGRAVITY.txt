@@ -1,0 +1,25 @@
+﻿/nuevo-proyecto-web
+
+Nuevo proyecto web freelance. Segui el workflow de nuevo-proyecto-web.
+
+Datos del cliente:
+- Nombre del emprendimiento: RB Centro Estetico
+- Tipo de sitio: landing page (definir segun el rubro del Instagram)
+- Carpeta raiz: C:\Users\elfac\Documents\RB Centro Estetico
+- Resources: imagenes y videos en la carpeta assets\ dentro de la raiz
+  (explorala con list_dir y usa todos los archivos disponibles)
+
+Datos de contacto:
+- Instagram: @rb.centroestetico_ (https://www.instagram.com/rb.centroestetico_)
+- WhatsApp: NONE (formato internacional sin +)
+
+Estilos:
+- Analiza el Instagram del cliente para detectar colores, vibe y estilo
+- Construi una landing page UNICA y diferente a otros proyectos previos
+- Responsive, mobile-first, sin placeholders, usando los recursos de assets\
+
+Archivos a crear:
+- index.html (landing page completa, en un solo archivo con CSS y JS embebidos)
+- server.js y package.json YA ESTAN CREADOS, no los toques
+
+IMPORTANTE: Al terminar el HTML, avisa para ejecutar deploy.ps1 (GitHub + Railway).
