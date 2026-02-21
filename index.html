@@ -336,7 +336,6 @@
             position: relative;
             border-radius: var(--radius-lg);
             overflow: hidden;
-            group;
             opacity: 0;
             transform: translateY(30px);
         }
@@ -706,7 +705,7 @@
                 <div class="masonry-overlay"><span class="masonry-text">Drenaje Linfático</span></div>
             </div>
             <div class="masonry-item">
-                <img src="assets/rb.centroestetico_/C6XFKAeuzBK/C6XFKAeuzBK.jpg" class="masonry-img"
+                <img src="assets/rb.centroestetico_/C-_S9UqscPe/C-_S9UqscPe_2.jpg" class="masonry-img"
                     alt="Técnica Estética">
                 <div class="masonry-overlay"><span class="masonry-text">Masajes Reductores</span></div>
             </div>
@@ -716,17 +715,17 @@
                 <div class="masonry-overlay"><span class="masonry-text">Equipamiento Premium</span></div>
             </div>
             <div class="masonry-item">
-                <img src="assets/rb.centroestetico_/C9N67qYBZDC/C9N67qYBZDC.jpg" class="masonry-img"
+                <img src="assets/rb.centroestetico_/C-_S9UqscPe/C-_S9UqscPe_3.jpg" class="masonry-img"
                     alt="Técnica Estética">
                 <div class="masonry-overlay"><span class="masonry-text">Exfoliación</span></div>
             </div>
             <div class="masonry-item">
-                <img src="assets/rb.centroestetico_/CA-vxrph4b5/CA-vxrph4b5_1.jpg" class="masonry-img"
+                <img src="assets/rb.centroestetico_/C-_S9UqscPe/C-_S9UqscPe_4.jpg" class="masonry-img"
                     alt="Técnica Estética">
                 <div class="masonry-overlay"><span class="masonry-text">Tonificación</span></div>
             </div>
             <div class="masonry-item">
-                <img src="assets/rb.centroestetico_/CCWK9WLhDD2/CCWK9WLhDD2_1.jpg" class="masonry-img"
+                <img src="assets/rb.centroestetico_/C-_S9UqscPe/C-_S9UqscPe_5.jpg" class="masonry-img"
                     alt="Técnica Estética">
                 <div class="masonry-overlay"><span class="masonry-text">Hidratación</span></div>
             </div>
@@ -747,21 +746,68 @@
     <section class="booking-cta" id="reservas">
         <div class="booking-content">
             <span class="section-subtitle">Agenda tu espacio</span>
-            <h2 class="booking-title">Despierta tu belleza exterior</h2>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">Contáctanos directamente para asesorarte y agendar
-                tu tratamiento personalizado con Romina Britos.</p>
+            <h2 class="booking-title">Sistema de Reservas</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Selecciona tu tratamiento, elige la fecha y hora
+                disponible, y confirma tu turno directamente por WhatsApp o Instagram.</p>
 
-            <div class="booking-actions">
-                <!-- WhatsApp Booking with target blank -->
-                <a href="https://wa.me/59892123456?text=Hola,%20quisiera%20agendar%20un%20turno%20en%20RB%20Centro%20Est%C3%A9tico."
-                    target="_blank" class="btn btn-whatsapp">
-                    <i data-feather="message-circle" style="width: 20px;"></i> Agendar por WhatsApp
-                </a>
+            <div class="booking-system">
+                <!-- Step 1: Services -->
+                <div class="booking-step active" id="step1">
+                    <h3>1. Elige tu Tratamiento</h3>
+                    <div class="service-grid">
+                        <div class="service-option" data-service="Pestañas / Cejas">Pestañas / Cejas</div>
+                        <div class="service-option" data-service="Uñas">Uñas</div>
+                        <div class="service-option" data-service="Progresivos">Progresivos</div>
+                        <div class="service-option" data-service="Hifu 12D">Hifu 12D</div>
+                        <div class="service-option" data-service="Depilación Definitiva">Depilación</div>
+                        <div class="service-option" data-service="Tratamiento Facial">Faciales</div>
+                        <div class="service-option" data-service="Tratamiento Corporal">Corporales</div>
+                    </div>
+                </div>
 
-                <!-- Instagram DM direct link -->
-                <a href="https://ig.me/m/rb.centroestetico_" target="_blank" class="btn btn-instagram">
-                    <i data-feather="instagram" style="width: 20px;"></i> Agendar por Mensaje de Instagram
-                </a>
+                <!-- Step 2: Date & Time -->
+                <div class="booking-step" id="step2">
+                    <h3>2. Selecciona Fecha y Hora</h3>
+                    <div class="datetime-container">
+                        <div class="calendar-wrapper">
+                            <div class="calendar-header">
+                                <button id="prevMonth"><i data-feather="chevron-left"></i></button>
+                                <span id="currentMonthYear">Octubre 2026</span>
+                                <button id="nextMonth"><i data-feather="chevron-right"></i></button>
+                            </div>
+                            <div class="calendar-grid" id="calendarGrid">
+                                <!-- Days injected by JS -->
+                            </div>
+                        </div>
+                        <div class="time-slots" id="timeSlots">
+                            <p class="text-muted" style="margin-top: 1rem; font-size: 0.9em;">Selecciona un día primero
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Confirmation -->
+                <div class="booking-step" id="step3">
+                    <h3>3. Confirma tu Reserva</h3>
+                    <div class="booking-summary">
+                        <p><strong>Tratamiento:</strong> <span id="summaryService"></span></p>
+                        <p><strong>Fecha:</strong> <span id="summaryDate"></span></p>
+                        <p><strong>Hora:</strong> <span id="summaryTime"></span></p>
+                    </div>
+
+                    <div class="booking-actions">
+                        <button id="btnWhatsapp" class="btn btn-whatsapp">
+                            <i data-feather="message-circle" style="width: 20px;"></i> Confirmar por WhatsApp
+                        </button>
+                        <button id="btnInstagram" class="btn btn-instagram">
+                            <i data-feather="instagram" style="width: 20px;"></i> Confirmar por Instagram DM
+                        </button>
+                        <button id="btnBack" class="btn btn-outline"
+                            style="margin-top: 1rem; width: 100%; max-width: 350px; justify-content: center;">
+                            Volver a Editar
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -770,7 +816,8 @@
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-brand">
-                <span class="brand">RB Centro.</span>
+                <img src="assets/rb.centroestetico_/B-nUImfnTDi/B-nUImfnTDi.jpg" alt="RB Centro Estético"
+                    style="height: 60px; border-radius: 5px; margin-bottom: 1rem;">
                 <p class="footer-text">Donde el bienestar integral se encuentra con la belleza. Tratamientos exclusivos
                     por Romina Britos.</p>
             </div>
@@ -848,6 +895,156 @@
             el.style.animationDelay = `${index * 0.1}s`;
             observer.observe(el);
         });
+
+        // Booking System Logic
+        let bookingData = {
+            service: null,
+            date: null,
+            time: null
+        };
+
+        const step1 = document.getElementById('step1');
+        const step2 = document.getElementById('step2');
+        const step3 = document.getElementById('step3');
+
+        // Step 1: Services Selection
+        document.querySelectorAll('.service-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                // Deselect all
+                document.querySelectorAll('.service-option').forEach(opt => opt.classList.remove('selected'));
+                // Select current
+                e.target.classList.add('selected');
+                bookingData.service = e.target.dataset.service;
+
+                // Move to step 2
+                setTimeout(() => {
+                    step1.classList.remove('active');
+                    step2.classList.add('active');
+                    renderCalendar(currentDate);
+                }, 300);
+            });
+        });
+
+        // Step 2: Calendar Logic
+        const calendarGrid = document.getElementById('calendarGrid');
+        const currentMonthYear = document.getElementById('currentMonthYear');
+        const timeSlotsContainer = document.getElementById('timeSlots');
+
+        let currentDate = new Date();
+        const availableTimes = ['10:00', '11:30', '14:00', '16:00', '17:30'];
+
+        function renderCalendar(date) {
+            calendarGrid.innerHTML = '';
+            const year = date.getFullYear();
+            const month = date.getMonth();
+
+            const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+            currentMonthYear.textContent = `${monthNames[month]} ${year}`;
+
+            // Add days of week headers
+            const daysOfWeek = ['D', 'L', 'M', 'M', 'J', 'V', 'S'];
+            daysOfWeek.forEach(day => {
+                const dayHeader = document.createElement('div');
+                dayHeader.textContent = day;
+                dayHeader.style.fontWeight = 'bold';
+                dayHeader.style.color = 'var(--text-muted)';
+                calendarGrid.appendChild(dayHeader);
+            });
+
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            // Empty cells before first day
+            for (let i = 0; i < firstDay; i++) {
+                const empty = document.createElement('div');
+                calendarGrid.appendChild(empty);
+            }
+
+            for (let i = 1; i <= daysInMonth; i++) {
+                const dayCell = document.createElement('div');
+                dayCell.textContent = i;
+                dayCell.classList.add('cal-day');
+
+                const cellDate = new Date(year, month, i);
+
+                // Disable past days and Sundays
+                if (cellDate < today || cellDate.getDay() === 0) {
+                    dayCell.classList.add('disabled');
+                } else {
+                    dayCell.addEventListener('click', () => {
+                        document.querySelectorAll('.cal-day').forEach(d => d.classList.remove('selected'));
+                        dayCell.classList.add('selected');
+                        bookingData.date = `${i} de ${monthNames[month]}`;
+                        renderTimeSlots();
+                    });
+                }
+
+                calendarGrid.appendChild(dayCell);
+            }
+        }
+
+        document.getElementById('prevMonth').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar(currentDate);
+        });
+
+        document.getElementById('nextMonth').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar(currentDate);
+        });
+
+        function renderTimeSlots() {
+            timeSlotsContainer.innerHTML = '<h4>Horarios:</h4>';
+            availableTimes.forEach(time => {
+                const slot = document.createElement('div');
+                slot.textContent = time;
+                slot.classList.add('time-slot');
+                slot.addEventListener('click', () => {
+                    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+                    slot.classList.add('selected');
+                    bookingData.time = time;
+
+                    // Move to Step 3
+                    setTimeout(() => {
+                        step2.classList.remove('active');
+                        step3.classList.add('active');
+                        populateSummary();
+                    }, 300);
+                });
+                timeSlotsContainer.appendChild(slot);
+            });
+        }
+
+        // Step 3: Confirmation
+        function populateSummary() {
+            document.getElementById('summaryService').textContent = bookingData.service;
+            document.getElementById('summaryDate').textContent = bookingData.date;
+            document.getElementById('summaryTime').textContent = bookingData.time;
+
+            const message = `Hola, quisiera agendar un turno en RB Centro Estético.%0A%0A*Tratamiento:* ${bookingData.service}%0A*Fecha:* ${bookingData.date}%0A*Hora:* ${bookingData.time}%0A%0AGracias.`;
+
+            document.getElementById('btnWhatsapp').onclick = () => {
+                window.open(`https://wa.me/598092123456?text=${message}`, '_blank');
+            };
+
+            document.getElementById('btnInstagram').onclick = () => {
+                window.open(`https://ig.me/m/rb.centroestetico_`, '_blank');
+            };
+        }
+
+        document.getElementById('btnBack').addEventListener('click', () => {
+            step3.classList.remove('active');
+            step1.classList.add('active');
+            // Reset state visually
+            document.querySelectorAll('.service-option').forEach(opt => opt.classList.remove('selected'));
+            document.querySelectorAll('.cal-day').forEach(d => d.classList.remove('selected'));
+            timeSlotsContainer.innerHTML = '<p class="text-muted" style="margin-top: 1rem; font-size: 0.9em;">Selecciona un día primero</p>';
+            bookingData = { service: null, date: null, time: null };
+        });
+
     </script>
 </body>
 
