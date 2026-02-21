@@ -4,42 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="RB Centro Estético - Tu belleza, nuestro cuidado. Tratamientos faciales, corporales y más.">
-    <title>RB Centro Estético</title>
+    <meta name="description" content="RB Centro Estético - Especialistas en tu cuidado personal y técnicas exclusivas.">
+    <title>RB Centro Estético | El Arte de Cuidar de Vos</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
         rel="stylesheet">
 
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
     <style>
-        /* CSS Variables */
         :root {
-            --primary: #FDFBF7;
-            /* Nude / Warm White */
-            --secondary: #D8B4B4;
-            /* Dusty Rose */
-            --accent: #D4AF37;
-            /* Gold Accent */
-            --text-dark: #2C2C2C;
-            /* Charcoal */
-            --text-light: #666666;
-            /* Gray */
-            --white: #FFFFFF;
+            /* Premium Color Palette */
+            --bg-base: #FDFBF7;
+            /* Soft Nude */
+            --bg-surface: #FFFFFF;
+            --primary-accent: #D4AF37;
+            /* Elegant Gold */
+            --secondary-accent: #E8D3D3;
+            /* Soft Rose */
+            --text-main: #2A2A2A;
+            /* Deep Charcoal */
+            --text-muted: #737373;
 
             --font-heading: 'Playfair Display', serif;
-            --font-body: 'Montserrat', sans-serif;
+            --font-body: 'Outfit', sans-serif;
 
-            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            --radius-lg: 16px;
+            --radius-xl: 32px;
         }
 
-        /* Reset & Base Styles */
+        /* Reset */
         * {
             margin: 0;
             padding: 0;
@@ -52,17 +52,17 @@
 
         body {
             font-family: var(--font-body);
-            background-color: var(--primary);
-            color: var(--text-dark);
-            line-height: 1.6;
+            background-color: var(--bg-base);
+            color: var(--text-main);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         h1,
         h2,
         h3,
         h4,
-        .brand {
+        .font-heading {
             font-family: var(--font-heading);
             font-weight: 400;
         }
@@ -72,136 +72,69 @@
             color: inherit;
         }
 
-        ul {
-            list-style: none;
-        }
-
         img {
             max-width: 100%;
-            height: auto;
             display: block;
         }
 
-        /* Typography */
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--text-dark);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 2px;
-            background-color: var(--accent);
-            margin: 1rem auto 0;
-            transition: width 0.3s ease;
-        }
-
-        .section-title:hover::after {
-            width: 100px;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 1rem 2.5rem;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 500;
-            border-radius: 50px;
-            transition: var(--transition);
-            cursor: pointer;
-            border: 1px solid transparent;
-        }
-
-        .btn-primary {
-            background-color: var(--text-dark);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background-color: transparent;
-            color: var(--text-dark);
-            border-color: var(--text-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-dark);
-            border-color: var(--text-dark);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--text-dark);
-            color: var(--white);
-            transform: translateY(-3px);
-        }
-
-        /* Navigation */
+        /* Glassmorphism Navbar */
         .navbar {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
             padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            transition: var(--transition);
+            transition: var(--transition-smooth);
+            background: transparent;
         }
 
         .navbar.scrolled {
-            background-color: rgba(253, 251, 247, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(253, 251, 247, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             padding: 1rem 5%;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
 
         .brand {
             font-size: 1.5rem;
+            font-family: var(--font-heading);
             font-weight: 600;
             letter-spacing: 1px;
-            color: var(--text-dark);
         }
 
         .nav-links {
             display: flex;
             gap: 2.5rem;
+            list-style: none;
+            align-items: center;
         }
 
         .nav-link {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1px;
             position: relative;
-            font-weight: 500;
             transition: color 0.3s ease;
         }
 
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -4px;
             left: 0;
             width: 0;
             height: 1px;
-            background-color: var(--accent);
-            transition: var(--transition);
+            background-color: var(--primary-accent);
+            transition: var(--transition-smooth);
         }
 
         .nav-link:hover {
-            color: var(--accent);
+            color: var(--primary-accent);
         }
 
         .nav-link:hover::after {
@@ -213,20 +146,21 @@
             background: none;
             border: none;
             cursor: pointer;
-            color: var(--text-dark);
+            color: var(--text-main);
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            position: relative;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            background-color: var(--secondary);
             overflow: hidden;
+            padding: 0 5%;
         }
 
+        /* Replacing the "Two Eyes" with a generic/elegant asset or a soft gradient if missing */
         .hero-bg {
             position: absolute;
             top: 0;
@@ -234,13 +168,20 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.6;
-            mix-blend-mode: multiply;
-            transform: scale(1.05);
-            animation: slowZoom 20s ease-out infinite alternate;
+            object-position: center 30%;
+            opacity: 0.3;
+            animation: kenburns 20s ease-out infinite alternate;
+            filter: grayscale(20%) sepia(20%) hue-rotate(-10deg);
         }
 
-        @keyframes slowZoom {
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(253, 251, 247, 0.1), var(--bg-base));
+        }
+
+        @keyframes kenburns {
             0% {
                 transform: scale(1);
             }
@@ -252,40 +193,343 @@
 
         .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             text-align: center;
-            max-width: 800px;
-            padding: 0 20px;
+            max-width: 900px;
+            margin-top: 5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary-accent);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            backdrop-filter: blur(4px);
+            animation: fadeInDown 1s ease forwards;
         }
 
         .hero-title {
             font-size: 4.5rem;
-            color: var(--white);
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            color: var(--text-main);
             opacity: 0;
             transform: translateY(30px);
-            animation: fadeUp 1s forwards 0.3s;
+            animation: fadeUp 1s ease forwards 0.3s;
+        }
+
+        .hero-title span {
+            font-style: italic;
+            color: var(--primary-accent);
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--white);
-            margin-bottom: 2.5rem;
-            font-weight: 300;
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-inline: auto;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease forwards 0.6s;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease forwards 0.9s;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.95rem;
             letter-spacing: 1px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 1s forwards 0.6s;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            border: 1px solid transparent;
         }
 
-        .hero-btn {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 1s forwards 0.9s;
+        .btn-primary {
+            background-color: var(--text-main);
+            color: var(--bg-base);
         }
 
+        .btn-primary:hover {
+            background-color: #000;
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-accent);
+            border-color: var(--secondary-accent);
+            transform: translateY(-4px);
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--primary-accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Services Concept (Techniques Intro) */
+        .techniques {
+            padding: 8rem 5%;
+            background-color: var(--bg-surface);
+        }
+
+        .techniques-intro {
+            max-width: 800px;
+            margin: 0 auto 5rem;
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--text-muted);
+        }
+
+        /* Masonry Gallery for Work/Techniques */
+        .masonry-gallery {
+            column-count: 4;
+            column-gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            group;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .masonry-item.visible {
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .masonry-img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            transition: var(--transition-smooth);
+        }
+
+        .masonry-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .masonry-item:hover .masonry-img {
+            transform: scale(1.05);
+        }
+
+        .masonry-item:hover .masonry-overlay {
+            opacity: 1;
+        }
+
+        .masonry-text {
+            color: white;
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            transform: translateY(10px);
+            transition: var(--transition-smooth);
+        }
+
+        .masonry-item:hover .masonry-text {
+            transform: translateY(0);
+        }
+
+        /* CTA Section */
+        .booking-cta {
+            padding: 8rem 5%;
+            background-color: var(--secondary-accent);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .booking-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
+            animation: rotateBg 20s linear infinite;
+        }
+
+        @keyframes rotateBg {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .booking-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 4rem 2rem;
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .booking-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .booking-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1EBE5D;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+            width: 100%;
+            max-width: 350px;
+            border: none;
+        }
+
+        .btn-instagram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(220, 39, 67, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--text-main);
+            color: var(--bg-base);
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-brand .brand {
+            color: var(--primary-accent);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .footer-text {
+            color: rgba(253, 251, 247, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .footer-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-accent);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        .social-link:hover {
+            background: var(--primary-accent);
+            color: var(--text-main);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(253, 251, 247, 0.5);
+            font-size: 0.85rem;
+        }
+
+        /* Animations */
         @keyframes fadeUp {
             to {
                 opacity: 1;
@@ -293,312 +537,34 @@
             }
         }
 
-        /* Services Section */
-        .services {
-            padding: 8rem 5%;
-            background-color: var(--white);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background-color: var(--primary);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        .service-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .service-img-wrap {
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .service-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-
-        .service-card:hover .service-img {
-            transform: scale(1.1);
-        }
-
-        .service-content {
-            padding: 2.5rem 2rem;
-            text-align: center;
-        }
-
-        .service-icon {
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-
-        .service-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-desc {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        /* About Section */
-        .about {
-            padding: 8rem 5%;
-            display: flex;
-            align-items: center;
-            gap: 5rem;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .about-img-wrap {
-            flex: 1;
-            position: relative;
-            padding-right: 2rem;
-            padding-bottom: 2rem;
-        }
-
-        .about-img-wrap::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 80%;
-            height: 80%;
-            background-color: var(--secondary);
-            z-index: -1;
-            border-radius: 10px;
-        }
-
-        .about-img {
-            border-radius: 10px;
-            width: 100%;
-            height: 600px;
-            object-fit: cover;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-content {
-            flex: 1;
-            opacity: 0;
-            transform: translateX(40px);
-            transition: var(--transition);
-        }
-
-        .about-content.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .about-subtitle {
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .about-title {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .about-text {
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            font-size: 1.05rem;
-        }
-
-        /* Gallery Section */
-        .gallery {
-            padding: 8rem 5%;
-            background-color: var(--white);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            aspect-ratio: 4/5;
-            cursor: pointer;
-            opacity: 0;
-            transform: scale(0.95);
-            transition: var(--transition);
-        }
-
-        .gallery-item.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .gallery-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(44, 44, 44, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover .gallery-img {
-            transform: scale(1.05);
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .gallery-icon {
-            color: var(--white);
-            width: 40px;
-            height: 40px;
-        }
-
-        /* Call to Action */
-        .cta {
-            padding: 6rem 5%;
-            background-color: var(--secondary);
-            text-align: center;
-            color: var(--text-dark);
-        }
-
-        .cta-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-text {
-            margin-bottom: 2.5rem;
-            font-size: 1.1rem;
-        }
-
-        .cta .btn-primary {
-            background-color: var(--white);
-            color: var(--text-dark);
-        }
-
-        .cta .btn-primary:hover {
-            background-color: var(--text-dark);
-            color: var(--white);
-            border-color: var(--text-dark);
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--text-dark);
-            color: var(--white);
-            padding: 4rem 5% 2rem;
-            text-align: center;
-        }
-
-        .footer-logo {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
-        }
-
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background-color: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about {
-                flex-direction: column;
-                padding: 5rem 5%;
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
             }
 
-            .about-img-wrap {
-                padding-right: 0;
-                padding-bottom: 0;
-                width: 100%;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
+        }
 
-            .about-img-wrap::before {
-                display: none;
-            }
-
-            .about-img {
-                height: 400px;
-            }
-
-            .hero-title {
-                font-size: 3.5rem;
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            .masonry-gallery {
+                column-count: 3;
             }
         }
 
         @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .masonry-gallery {
+                column-count: 2;
+            }
+
             .nav-toggle {
                 display: block;
             }
@@ -607,26 +573,41 @@
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 70%;
+                width: 100%;
                 height: 100vh;
-                background-color: var(--white);
+                background: rgba(253, 251, 247, 0.98);
+                backdrop-filter: blur(20px);
                 flex-direction: column;
                 justify-content: center;
-                align-items: center;
-                transition: var(--transition);
-                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+                transition: var(--transition-smooth);
             }
 
             .nav-links.active {
                 right: 0;
             }
 
+            .nav-link {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
             .hero-title {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
 
-            .section-title {
-                font-size: 2rem;
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .masonry-gallery {
+                column-count: 1;
             }
         }
     </style>
@@ -644,170 +625,167 @@
 
         <ul class="nav-links" id="navLinks">
             <li><a href="#inicio" class="nav-link">Inicio</a></li>
-            <li><a href="#servicios" class="nav-link">Servicios</a></li>
-            <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-            <li><a href="#galeria" class="nav-link">Galería</a></li>
-            <li><a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="btn btn-outline"
-                    style="padding: 0.5rem 1.5rem; font-size: 0.8rem;">Contacto</a></li>
+            <li><a href="#tecnicas" class="nav-link">Técnicas</a></li>
+            <li><a href="#reservas" class="nav-link">Reservas</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <!-- Main background image -->
-        <img src="assets/rb.centroestetico_/B-N00JVhm7O/B-N00JVhm7O.jpg" alt="RB Centro Estético Background"
-            class="hero-bg">
+        <!-- Replaced "Two Eyes" with a cleaner aesthetic tool image or standard image -->
+        <img src="assets/rb.centroestetico_/DKCNH1hOU0b/DKCNH1hOU0b.jpg" alt="Centro Estético" class="hero-bg">
 
         <div class="hero-content">
-            <h1 class="hero-title">Tu belleza,<br>nuestro cuidado.</h1>
-            <p class="hero-subtitle">Descubrí tu mejor versión en nuestro centro de estética integral.</p>
-            <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="btn btn-primary hero-btn">
-                Reserva tu Turno <i data-feather="arrow-right"></i>
-            </a>
-        </div>
-    </section>
+            <div class="badge">Belleza Integral</div>
+            <h1 class="hero-title">El arte de <span>cuidar</span> tu mejor versión</h1>
+            <p class="hero-subtitle">Descubrí nuestras técnicas exclusivas de estética avanzada diseñadas para potenciar
+                tu bienestar y tu belleza natural.</p>
 
-    <!-- Services Section -->
-    <section class="services" id="servicios">
-        <h2 class="section-title">Nuestros Servicios</h2>
-        <div class="services-grid">
-
-            <div class="service-card animate-on-scroll">
-                <div class="service-img-wrap">
-                    <img src="assets/rb.centroestetico_/B-Ntg2jBEda/B-Ntg2jBEda.jpg" alt="Tratamientos Faciales"
-                        class="service-img">
-                </div>
-                <div class="service-content">
-                    <i data-feather="smile" class="service-icon"></i>
-                    <h3 class="service-title">Faciales</h3>
-                    <p class="service-desc">Limpieza profunda, hidratación y rejuvenecimiento para lucir una piel
-                        radiante y saludable.</p>
-                </div>
-            </div>
-
-            <div class="service-card animate-on-scroll" style="transition-delay: 0.2s;">
-                <div class="service-img-wrap">
-                    <img src="assets/rb.centroestetico_/B-NtiefBvLt/B-NtiefBvLt.jpg" alt="Tratamientos Corporales"
-                        class="service-img">
-                </div>
-                <div class="service-content">
-                    <i data-feather="activity" class="service-icon"></i>
-                    <h3 class="service-title">Corporales</h3>
-                    <p class="service-desc">Reducción, tonificación y relajación. Tratamientos personalizados para
-                        moldear tu figura.</p>
-                </div>
-            </div>
-
-            <div class="service-card animate-on-scroll" style="transition-delay: 0.4s;">
-                <div class="service-img-wrap">
-                    <img src="assets/rb.centroestetico_/B-NtlDXBu1g/B-NtlDXBu1g.jpg" alt="Aparatología"
-                        class="service-img">
-                </div>
-                <div class="service-content">
-                    <i data-feather="sun" class="service-icon"></i>
-                    <h3 class="service-title">Tecnología</h3>
-                    <p class="service-desc">Equipamiento de última generación para garantizar los mejores resultados en
-                        cada sesión.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="nosotros">
-        <div class="about-img-wrap">
-            <img src="assets/rb.centroestetico_/B-NtmlNBsUk/B-NtmlNBsUk.jpg" alt="Sobre RB Centro" class="about-img">
-        </div>
-        <div class="about-content animate-on-scroll">
-            <span class="about-subtitle">Nuestra Esencia</span>
-            <h2 class="about-title">El arte de cuidar de vos.</h2>
-            <p class="about-text">En RB Centro Estético creemos que la belleza exterior es un reflejo de tu bienestar
-                interior. Nos dedicamos a brindar una experiencia relajante y transformadora, utilizando productos de
-                primera calidad y las técnicas más innovadoras del mercado.</p>
-            <p class="about-text">Nuestro equipo de profesionales te acompañará en cada paso para asegurar que alcances
-                los resultados que deseás, en un ambiente diseñado especialmente para tu confort y tranquilidad.</p>
-            <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="btn btn-outline">
-                Conocé más <i data-feather="instagram"></i>
-            </a>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery" id="galeria">
-        <h2 class="section-title">Galería</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item animate-on-scroll">
-                <img src="assets/rb.centroestetico_/B-NtpE5hFxE/B-NtpE5hFxE.jpg" class="gallery-img" alt="Gallery">
-                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
-                    <i data-feather="instagram" class="gallery-icon"></i>
+            <div class="hero-actions">
+                <a href="#reservas" class="btn btn-primary">
+                    Reservar Turno <i data-feather="calendar"></i>
                 </a>
-            </div>
-            <div class="gallery-item animate-on-scroll" style="transition-delay: 0.1s;">
-                <img src="assets/rb.centroestetico_/B-NtrQnhkoD/B-NtrQnhkoD.jpg" class="gallery-img" alt="Gallery">
-                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
-                    <i data-feather="instagram" class="gallery-icon"></i>
-                </a>
-            </div>
-            <div class="gallery-item animate-on-scroll" style="transition-delay: 0.2s;">
-                <img src="assets/rb.centroestetico_/B-NttLcB0E2/B-NttLcB0E2.jpg" class="gallery-img" alt="Gallery">
-                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
-                    <i data-feather="instagram" class="gallery-icon"></i>
-                </a>
-            </div>
-            <div class="gallery-item animate-on-scroll" style="transition-delay: 0.3s;">
-                <img src="assets/rb.centroestetico_/B-Ntun5B_h9/B-Ntun5B_h9.jpg" class="gallery-img" alt="Gallery">
-                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
-                    <i data-feather="instagram" class="gallery-icon"></i>
-                </a>
-            </div>
-            <div class="gallery-item animate-on-scroll" style="transition-delay: 0.4s;">
-                <img src="assets/rb.centroestetico_/B-Ntw3LhlsJ/B-Ntw3LhlsJ.jpg" class="gallery-img" alt="Gallery">
-                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
-                    <i data-feather="instagram" class="gallery-icon"></i>
-                </a>
-            </div>
-            <div class="gallery-item animate-on-scroll" style="transition-delay: 0.5s;">
-                <img src="assets/rb.centroestetico_/B-nUImfnTDi/B-nUImfnTDi.jpg" class="gallery-img" alt="Gallery">
-                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
-                    <i data-feather="instagram" class="gallery-icon"></i>
-                </a>
-            </div>
-            <div class="gallery-item animate-on-scroll" style="transition-delay: 0.6s;">
-                <img src="assets/rb.centroestetico_/B-NwS4kjaUp/B-NwS4kjaUp.jpg" class="gallery-img" alt="Gallery">
-                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
-                    <i data-feather="instagram" class="gallery-icon"></i>
-                </a>
-            </div>
-            <div class="gallery-item animate-on-scroll" style="transition-delay: 0.7s;">
-                <img src="assets/rb.centroestetico_/B-NxekFB_v4/B-NxekFB_v4.jpg" class="gallery-img" alt="Gallery">
-                <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="gallery-overlay">
-                    <i data-feather="instagram" class="gallery-icon"></i>
+                <a href="#tecnicas" class="btn btn-outline">
+                    Ver Técnicas <i data-feather="arrow-down"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="cta">
-        <h2 class="cta-title">¿Lista para tu transformación?</h2>
-        <p class="cta-text">Contactanos ahora y agendá tu sesión personalizada.</p>
-        <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="btn btn-primary">
-            Agenda Vía Instagram <i data-feather="message-circle"></i>
-        </a>
+    <!-- Techniques Gallery Section -->
+    <section class="techniques" id="tecnicas">
+        <div class="section-header">
+            <span class="section-subtitle">Portafolio</span>
+            <h2 class="section-title">Nuestras Técnicas</h2>
+        </div>
+
+        <p class="techniques-intro">En RB Centro Estético implementamos los tratamientos más efectivos e innovadores.
+            Explora resultados reales y equipos de última generación utilizados por Romina Britos.</p>
+
+        <!-- Extense Gallery Using Assets -->
+        <div class="masonry-gallery">
+            <!-- Utilizing a diverse range of images from the fetched assets folder -->
+            <div class="masonry-item">
+                <img src="assets/rb.centroestetico_/B-Ntg2jBEda/B-Ntg2jBEda.jpg" class="masonry-img"
+                    alt="Técnica Estética">
+                <div class="masonry-overlay"><span class="masonry-text">Cuidado Facial</span></div>
+            </div>
+            <div class="masonry-item">
+                <img src="assets/rb.centroestetico_/B-NtiefBvLt/B-NtiefBvLt.jpg" class="masonry-img"
+                    alt="Tecnología Avanzada">
+                <div class="masonry-overlay"><span class="masonry-text">Aparatología</span></div>
+            </div>
+            <div class="masonry-item">
+                <img src="assets/rb.centroestetico_/B_0Z4FcBU69/B_0Z4FcBU69.jpg" class="masonry-img"
+                    alt="Técnica Estética">
+                <div class="masonry-overlay"><span class="masonry-text">Tratamiento Corporal</span></div>
+            </div>
+            <div class="masonry-item">
+                <img src="assets/rb.centroestetico_/B-NtlDXBu1g/B-NtlDXBu1g.jpg" class="masonry-img"
+                    alt="Técnica Estética">
+                <div class="masonry-overlay"><span class="masonry-text">Resultados Notables</span></div>
+            </div>
+            <div class="masonry-item">
+                <img src="assets/rb.centroestetico_/C-_S9UqscPe/C-_S9UqscPe_1.jpg" class="masonry-img"
+                    alt="Técnica Estética">
+                <div class="masonry-overlay"><span class="masonry-text">Bienestar</span></div>
+            </div>
+            <div class="masonry-item">
+                <img src="assets/rb.centroestetico_/C4JXZaFOG16/C4JXZaFOG16.jpg" class="masonry-img"
+                    alt="Técnica Estética">
+                <div class="masonry-overlay"><span class="masonry-text">Estética Integral</span></div>
+            </div>
+            <div class="masonry-item">
+                <img src="assets/rb.centroestetico_/C54ALRsOJQ8/C54ALRsOJQ8_1.jpg" class="masonry-img"
+                    alt="Técnica Estética">
+                <div class="masonry-overlay"><span class="masonry-text">Skin Care</span></div>
+            </div>
+            <div class="masonry-item">
+                <img src="assets/rb.centroestetico_/B-S-BvcHGtP/B-S-BvcHGtP.jpg" class="masonry-img"
+                    alt="Técnica Estética">
+                <div class="masonry-overlay"><span class="masonry-text">Drenaje Linfático</span></div>
+            </div>
+            <div class="masonry-item">
+                <img src="assets/rb.centroestetico_/C6XFKAeuzBK/C6XFKAeuzBK.jpg" class="masonry-img"
+                    alt="Técnica Estética">
+                <div class="masonry-overlay"><span class="masonry-text">Masajes Reductores</span></div>
+            </div>
+            <div class="masonry-item">
+                <img src="assets/rb.centroestetico_/C8FzUtchdy4/C8FzUtchdy4.jpg" class="masonry-img"
+                    alt="Técnica Estética">
+                <div class="masonry-overlay"><span class="masonry-text">Equipamiento Premium</span></div>
+            </div>
+            <div class="masonry-item">
+                <img src="assets/rb.centroestetico_/C9N67qYBZDC/C9N67qYBZDC.jpg" class="masonry-img"
+                    alt="Técnica Estética">
+                <div class="masonry-overlay"><span class="masonry-text">Exfoliación</span></div>
+            </div>
+            <div class="masonry-item">
+                <img src="assets/rb.centroestetico_/CA-vxrph4b5/CA-vxrph4b5_1.jpg" class="masonry-img"
+                    alt="Técnica Estética">
+                <div class="masonry-overlay"><span class="masonry-text">Tonificación</span></div>
+            </div>
+            <div class="masonry-item">
+                <img src="assets/rb.centroestetico_/CCWK9WLhDD2/CCWK9WLhDD2_1.jpg" class="masonry-img"
+                    alt="Técnica Estética">
+                <div class="masonry-overlay"><span class="masonry-text">Hidratación</span></div>
+            </div>
+            <div class="masonry-item">
+                <img src="assets/rb.centroestetico_/CFC2a_oBN-O/CFC2a_oBN-O.jpg" class="masonry-img"
+                    alt="Técnica Estética">
+                <div class="masonry-overlay"><span class="masonry-text">Rejuvenecimiento</span></div>
+            </div>
+            <div class="masonry-item">
+                <img src="assets/rb.centroestetico_/DA1p4HGSYih/DA1p4HGSYih.jpg" class="masonry-img"
+                    alt="Técnica Estética">
+                <div class="masonry-overlay"><span class="masonry-text">Nuevas Técnicas</span></div>
+            </div>
+        </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Booking CTA Section -->
+    <section class="booking-cta" id="reservas">
+        <div class="booking-content">
+            <span class="section-subtitle">Agenda tu espacio</span>
+            <h2 class="booking-title">Despierta tu belleza exterior</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Contáctanos directamente para asesorarte y agendar
+                tu tratamiento personalizado con Romina Britos.</p>
+
+            <div class="booking-actions">
+                <!-- WhatsApp Booking with target blank -->
+                <a href="https://wa.me/59892123456?text=Hola,%20quisiera%20agendar%20un%20turno%20en%20RB%20Centro%20Est%C3%A9tico."
+                    target="_blank" class="btn btn-whatsapp">
+                    <i data-feather="message-circle" style="width: 20px;"></i> Agendar por WhatsApp
+                </a>
+
+                <!-- Instagram DM direct link -->
+                <a href="https://ig.me/m/rb.centroestetico_" target="_blank" class="btn btn-instagram">
+                    <i data-feather="instagram" style="width: 20px;"></i> Agendar por Mensaje de Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer without Facebook -->
     <footer class="footer">
-        <h2 class="footer-logo brand">RB Centro.</h2>
-        <div class="footer-social">
-            <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="social-link">
-                <i data-feather="instagram"></i>
-            </a>
-            <a href="#" class="social-link">
-                <i data-feather="facebook"></i>
-            </a>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <span class="brand">RB Centro.</span>
+                <p class="footer-text">Donde el bienestar integral se encuentra con la belleza. Tratamientos exclusivos
+                    por Romina Britos.</p>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Contacto Rápido</h4>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/rb.centroestetico_" target="_blank" class="social-link"
+                        title="Instagram">
+                        <i data-feather="instagram"></i>
+                    </a>
+                </div>
+            </div>
         </div>
+
         <div class="footer-bottom">
             <p>&copy; 2026 RB Centro Estético. Todos los derechos reservados.</p>
         </div>
@@ -815,7 +793,7 @@
 
     <!-- Scripts -->
     <script>
-        // Initialize Feather Icons
+        // Evaluate Feather Icons
         feather.replace();
 
         // Navbar Scroll Effect
@@ -831,27 +809,29 @@
         // Mobile Menu Toggle
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
+        const body = document.body;
 
         navToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             const icon = navLinks.classList.contains('active') ? 'x' : 'menu';
             navToggle.innerHTML = `<i data-feather="${icon}"></i>`;
             feather.replace();
+            body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
         });
 
-        // Close menu when clicking a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 navToggle.innerHTML = `<i data-feather="menu"></i>`;
                 feather.replace();
+                body.style.overflow = 'auto';
             });
         });
 
-        // Intersection Observer for Scroll Animations
+        // Masonry Scroll Animations
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
+            rootMargin: "0px"
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -863,7 +843,9 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        document.querySelectorAll('.masonry-item').forEach((el, index) => {
+            // Stagger animation delays for masonry items
+            el.style.animationDelay = `${index * 0.1}s`;
             observer.observe(el);
         });
     </script>
