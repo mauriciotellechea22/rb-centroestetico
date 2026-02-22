@@ -1,3016 +1,594 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="RB Centro Estético · Extensiones de Pestañas, Uñas en Gel, Tratamientos Faciales y más. Atención personalizada por Romina Britos en un espacio diseñado para vos.">
-  <meta name="keywords"
-    content="centro estético, extensiones de pestañas, uñas en gel, nail art, depilación definitiva, hifu, tratamientos faciales, Romina Britos">
+  <meta name="description" content="RB Centro Estético · Tratamientos estéticos personalizados en Montevideo. Pestañas, uñas, faciales y más. Atención profesional por Romina Britos.">
+  <meta name="keywords" content="centro estético montevideo, extensiones pestañas, uñas gel, depilación definitiva, hifu, tratamientos faciales, Romina Britos">
   <meta name="author" content="Romina Britos · RB Centro Estético">
   <meta name="theme-color" content="#C4728A">
   <title>RB Centro Estético · Romina Britos</title>
 
-  <!-- Open Graph -->
   <meta property="og:title" content="RB Centro Estético · Romina Britos">
-  <meta property="og:description"
-    content="Extensiones de Pestañas, Uñas en Gel, Tratamientos Faciales y más. Tu espacio de belleza personalizado.">
+  <meta property="og:description" content="Tratamientos estéticos personalizados en Montevideo. Resultados reales, atención profesional.">
   <meta property="og:image" content="assets/rb.centroestetico_/DA1p4HGSYih/DA1p4HGSYih.jpg">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_UY">
 
-  <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
-    rel="stylesheet">
-
-  <!-- Preload hero image -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/rb.centroestetico_/DA1p4HGSYih/DA1p4HGSYih.jpg">
 
-  <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BeautySalon",
     "name": "RB Centro Estético",
-    "description": "Centro estético especializado en extensiones de pestañas, uñas en gel, tratamientos faciales y corporales.",
-    "url": "",
+    "description": "Centro estético especializado en extensiones de pestañas, uñas en gel, tratamientos faciales y corporales en Montevideo.",
     "telephone": "+59892123456",
     "image": "assets/rb.centroestetico_/DA1p4HGSYih/DA1p4HGSYih.jpg",
     "priceRange": "$$",
     "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "09:00",
-        "closes": "19:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "09:00",
-        "closes": "14:00"
-      }
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"19:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}
     ],
-    "sameAs": [
-      "https://www.instagram.com/rb.centroestetico_/"
-    ]
+    "sameAs": ["https://www.instagram.com/rb.centroestetico_/"]
   }
   </script>
 
   <style>
-    /* ══════════════════════════════════════════════════════
-       DESIGN TOKENS
-       ══════════════════════════════════════════════════════ */
+    /* ═══ TOKENS ═══ */
     :root {
       --rose: #C4728A;
       --rose-dark: #A85A72;
-      --rose-deeper: #8E4A60;
       --rose-light: #F2DCE3;
       --rose-pale: #FAF2F5;
       --gold: #C9A270;
-      --gold-light: #F0E4D4;
       --cream: #FDFAF7;
       --ink: #1E1A1C;
-      --ink-soft: #2D2628;
       --muted: #8A7980;
-      --muted-light: #B5A5AB;
       --white: #FFFFFF;
       --green-wa: #25D366;
-
       --serif: 'Cormorant Garamond', Georgia, serif;
       --sans: 'DM Sans', system-ui, sans-serif;
-
-      --ease: cubic-bezier(.16, 1, .3, 1);
-      --ease-out: cubic-bezier(.33, 1, .68, 1);
-      --ease-bounce: cubic-bezier(.34, 1.56, .64, 1);
-
-      --r: 12px;
-      --rL: 20px;
-      --rXL: 32px;
-      --shadow-sm: 0 2px 8px rgba(196, 114, 138, .08);
-      --shadow-md: 0 8px 30px rgba(196, 114, 138, .12);
-      --shadow-lg: 0 16px 50px rgba(196, 114, 138, .18);
-      --shadow-xl: 0 24px 60px rgba(30, 26, 28, .15);
+      --ease: cubic-bezier(.16,1,.3,1);
+      --r: 16px;
     }
 
-    /* ══════════════════════════════════════════════════════
-       RESET & BASE
-       ══════════════════════════════════════════════════════ */
-    *,
-    *::before,
-    *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-      -webkit-text-size-adjust: 100%;
-    }
-
+    /* ═══ RESET ═══ */
+    *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
     body {
-      font-family: var(--sans);
-      background: var(--cream);
-      color: var(--ink);
-      overflow-x: hidden;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      font-family:var(--sans); background:var(--cream); color:var(--ink);
+      overflow-x:hidden; line-height:1.7;
+      -webkit-font-smoothing:antialiased;
     }
+    a { text-decoration:none; color:inherit; }
+    img { display:block; max-width:100%; height:auto; }
+    button { font-family:inherit; cursor:pointer; }
+    h1,h2,h3 { font-family:var(--serif); font-weight:400; line-height:1.2; }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: color .25s var(--ease);
-    }
+    /* ═══ UTILITIES ═══ */
+    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
+    .text-center { text-align:center; }
+    .reveal { opacity:0; transform:translateY(24px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
 
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
-    button {
-      font-family: inherit;
-      cursor: pointer;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-      font-family: var(--serif);
-      font-weight: 400;
-      line-height: 1.15;
-    }
-
-    ::selection {
-      background: var(--rose-light);
-      color: var(--ink);
-    }
-
-    /* Skip to content */
-    .skip-link {
-      position: absolute;
-      top: -100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--rose);
-      color: #fff;
-      padding: .75rem 1.5rem;
-      border-radius: 0 0 var(--r) var(--r);
-      z-index: 9999;
-      font-size: .85rem;
-      font-weight: 500;
-      transition: top .3s;
-    }
-
-    .skip-link:focus {
-      top: 0;
-    }
-
-    /* Focus styles */
-    :focus-visible {
-      outline: 2px solid var(--rose);
-      outline-offset: 3px;
-    }
-
-    /* ══════════════════════════════════════════════════════
-       SCROLL PROGRESS BAR
-       ══════════════════════════════════════════════════════ */
-    .scroll-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--rose), var(--gold));
-      z-index: 9999;
-      transition: width .1s linear;
-      pointer-events: none;
-    }
-
-    /* ══════════════════════════════════════════════════════
-       NAV
-       ══════════════════════════════════════════════════════ */
+    /* ═══ NAV ═══ */
     .nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 900;
-      padding: 1rem 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: all .4s var(--ease);
+      position:fixed; top:0; width:100%; z-index:900;
+      padding:14px 5%; display:flex; align-items:center; justify-content:space-between;
+      transition: background .35s, box-shadow .35s;
     }
-
     .nav.solid {
-      background: rgba(253, 250, 247, .88);
-      backdrop-filter: blur(20px) saturate(1.2);
-      -webkit-backdrop-filter: blur(20px) saturate(1.2);
-      box-shadow: 0 1px 0 rgba(196, 114, 138, .1);
-      padding: .75rem 5%;
+      background:rgba(253,250,247,.92);
+      backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+      box-shadow:0 1px 0 rgba(196,114,138,.1);
     }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: .7rem;
-    }
-
-    .nav-logo-mark {
-      width: 40px;
-      height: 40px;
-      border: 1.5px solid var(--rose);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      transition: all .3s var(--ease);
-    }
-
-    .nav-logo:hover .nav-logo-mark {
-      background: var(--rose);
-    }
-
-    .nav-logo:hover .nav-logo-mark span {
-      color: #fff;
-    }
-
-    .nav-logo-mark span {
-      font-family: var(--serif);
-      font-size: .72rem;
-      font-weight: 600;
-      color: var(--rose);
-      letter-spacing: .5px;
-      transition: color .3s;
-    }
-
-    .nav-brand {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      letter-spacing: .3px;
-    }
-
-    .nav-brand strong {
-      color: var(--rose);
-      font-weight: 500;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 2.2rem;
-      align-items: center;
-    }
-
+    .nav-brand { font-family:var(--serif); font-size:1.1rem; }
+    .nav-brand strong { color:var(--rose); font-weight:500; }
+    .nav-links { list-style:none; display:flex; gap:2rem; align-items:center; }
     .nav-links a {
-      font-size: .78rem;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: var(--ink);
-      position: relative;
-      padding-bottom: 3px;
+      font-size:.78rem; letter-spacing:1.5px; text-transform:uppercase;
+      font-weight:500; transition:color .2s;
     }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 1.5px;
-      background: var(--rose);
-      transition: width .35s var(--ease);
+    .nav-links a:hover { color:var(--rose); }
+    .nav-cta-link {
+      background:var(--rose); color:#fff !important; padding:8px 20px;
+      border-radius:50px; font-size:.78rem !important;
     }
-
-    .nav-links a:hover {
-      color: var(--rose);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-cta {
-      background: var(--rose) !important;
-      color: #fff !important;
-      padding: .55rem 1.5rem !important;
-      border-radius: 50px;
-      letter-spacing: 1px !important;
-      transition: all .3s var(--ease) !important;
-      box-shadow: 0 4px 15px rgba(196, 114, 138, .3);
-    }
-
-    .nav-cta::after {
-      display: none !important;
-    }
-
-    .nav-cta:hover {
-      background: var(--rose-dark) !important;
-      transform: translateY(-2px) !important;
-      box-shadow: 0 8px 25px rgba(196, 114, 138, .4) !important;
-    }
-
-    /* Hamburger */
+    .nav-cta-link:hover { background:var(--rose-dark); }
     .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      width: 34px;
-      height: 34px;
-      flex-direction: column;
-      justify-content: center;
-      gap: 6px;
-      z-index: 901;
+      display:none; background:none; border:none; width:32px; height:32px;
+      flex-direction:column; justify-content:center; gap:6px;
     }
-
-    .nav-toggle span {
-      display: block;
-      height: 1.5px;
-      width: 100%;
-      background: var(--ink);
-      transition: .4s var(--ease);
-      transform-origin: center;
-    }
-
-    .nav-toggle.open span:nth-child(1) {
-      transform: translateY(7.5px) rotate(45deg);
-    }
-
-    .nav-toggle.open span:nth-child(2) {
-      opacity: 0;
-      transform: scaleX(0);
-    }
-
-    .nav-toggle.open span:nth-child(3) {
-      transform: translateY(-7.5px) rotate(-45deg);
-    }
-
-    /* Mobile drawer */
+    .nav-toggle span { display:block; height:1.5px; background:var(--ink); transition:.35s var(--ease); }
+    .nav-toggle.open span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity:0; }
+    .nav-toggle.open span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
     .nav-drawer {
-      position: fixed;
-      inset: 0;
-      z-index: 800;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      background: var(--cream);
-      opacity: 0;
-      visibility: hidden;
-      transition: .5s var(--ease);
+      position:fixed; inset:0; background:var(--cream); z-index:800;
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2.5rem;
+      transform:translateX(100%); transition:.4s var(--ease);
     }
+    .nav-drawer.open { transform:translateX(0); }
+    .nav-drawer a { font-family:var(--serif); font-size:2rem; }
 
-    .nav-drawer.open {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .nav-drawer a {
-      font-family: var(--serif);
-      font-size: 2.4rem;
-      color: var(--ink);
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity .4s var(--ease), transform .4s var(--ease), color .2s;
-    }
-
-    .nav-drawer.open a {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .nav-drawer.open a:nth-child(1) {
-      transition-delay: .1s;
-    }
-
-    .nav-drawer.open a:nth-child(2) {
-      transition-delay: .15s;
-    }
-
-    .nav-drawer.open a:nth-child(3) {
-      transition-delay: .2s;
-    }
-
-    .nav-drawer.open a:nth-child(4) {
-      transition-delay: .25s;
-    }
-
-    .nav-drawer.open a:nth-child(5) {
-      transition-delay: .3s;
-    }
-
-    .nav-drawer a:hover {
-      color: var(--rose);
-    }
-
-    .nav-drawer-socials {
-      display: flex;
-      gap: 1.2rem;
-      margin-top: 1rem;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all .4s var(--ease);
-    }
-
-    .nav-drawer.open .nav-drawer-socials {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: .35s;
-    }
-
-    .nav-drawer-socials a {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 1.5px solid var(--rose-light);
-      display: grid;
-      place-items: center;
-      font-size: .9rem;
-      color: var(--muted);
-      opacity: 1 !important;
-      transform: none !important;
-    }
-
-    .nav-drawer-socials a:hover {
-      background: var(--rose);
-      border-color: var(--rose);
-      color: #fff;
-    }
-
-    /* ══════════════════════════════════════════════════════
-       HERO
-       ══════════════════════════════════════════════════════ */
+    /* ═══ HERO — CONVERSIÓN ═══ */
     .hero {
-      min-height: 100svh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      overflow: hidden;
-      position: relative;
+      min-height:100svh; display:grid; grid-template-columns:1fr 1fr;
+      overflow:hidden;
     }
-
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 8rem 6% 5rem;
-      position: relative;
-      z-index: 2;
+    .hero-content {
+      display:flex; flex-direction:column; justify-content:center;
+      padding:120px 6% 80px;
     }
-
-    .hero-eyebrow {
-      font-size: .75rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--rose);
-      font-weight: 500;
-      margin-bottom: 1.8rem;
-      display: flex;
-      align-items: center;
-      gap: .85rem;
-      opacity: 0;
-      transform: translateY(15px);
-      animation: heroFadeUp .8s var(--ease) .3s forwards;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 35px;
-      height: 1.5px;
-      background: linear-gradient(90deg, var(--rose), var(--gold));
-    }
-
     .hero-title {
-      font-size: clamp(2.8rem, 5vw, 5.2rem);
-      color: var(--ink);
-      margin-bottom: 1.6rem;
-      font-weight: 300;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: heroFadeUp .8s var(--ease) .5s forwards;
+      font-size:clamp(2rem, 4vw, 3.2rem); font-weight:300;
+      margin-bottom:20px; color:var(--ink);
     }
-
-    .hero-title em {
-      color: var(--rose);
-      font-style: italic;
-      font-weight: 400;
-      position: relative;
-    }
-
-    .hero-title em::after {
-      content: '';
-      position: absolute;
-      bottom: .08em;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, var(--rose), transparent);
-      opacity: .4;
-    }
-
+    .hero-title em { color:var(--rose); font-style:italic; }
     .hero-sub {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 420px;
-      margin-bottom: 2.8rem;
-      line-height: 1.85;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: heroFadeUp .8s var(--ease) .7s forwards;
+      font-size:1rem; color:var(--muted); margin-bottom:36px;
+      line-height:1.8; max-width:440px;
     }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: heroFadeUp .8s var(--ease) .9s forwards;
+    .hero-cta {
+      display:inline-flex; align-items:center; gap:10px;
+      background:var(--green-wa); color:#fff;
+      padding:16px 32px; border-radius:50px;
+      font-size:1rem; font-weight:600; border:none;
+      box-shadow:0 8px 25px rgba(37,211,102,.35);
+      transition:all .3s var(--ease);
+      text-align:center;
     }
-
-    @keyframes heroFadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .hero-cta:hover { background:#1EBE5D; transform:translateY(-3px); box-shadow:0 14px 35px rgba(37,211,102,.4); }
+    .hero-cta svg { width:22px; height:22px; flex-shrink:0; }
+    .hero-trust {
+      display:flex; gap:24px; margin-top:28px; flex-wrap:wrap;
     }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: .6rem;
-      padding: .9rem 2.2rem;
-      border-radius: 50px;
-      font-size: .85rem;
-      font-weight: 500;
-      letter-spacing: .5px;
-      transition: all .35s var(--ease);
-      cursor: pointer;
-      border: none;
-      position: relative;
-      overflow: hidden;
+    .hero-trust-item {
+      font-size:.82rem; color:var(--muted); display:flex; align-items:center; gap:6px;
     }
+    .hero-trust-item svg { width:16px; height:16px; color:var(--rose); flex-shrink:0; }
 
-    .btn-rose {
-      background: var(--rose);
-      color: #fff;
-      box-shadow: 0 6px 20px rgba(196, 114, 138, .35);
-    }
+    .hero-img { position:relative; overflow:hidden; }
+    .hero-img img { width:100%; height:100%; object-fit:cover; }
 
-    .btn-rose:hover {
-      background: var(--rose-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(196, 114, 138, .45);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--ink);
-      border: 1.5px solid rgba(30, 26, 28, .2);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--rose);
-      color: var(--rose);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .btn svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-right img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 20%;
-      transform: scale(1.05);
-      transition: transform 12s ease;
-    }
-
-    .hero-right:hover img {
-      transform: scale(1.1);
-    }
-
-    .hero-right::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, var(--cream) 0%, rgba(253, 250, 247, .3) 20%, transparent 40%);
-    }
-
-    .hero-right::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(to top, rgba(30, 26, 28, .15) 0%, transparent 30%);
-    }
-
-    /* Floating badges */
-    .hero-float {
-      position: absolute;
-      z-index: 3;
-      background: rgba(253, 250, 247, .92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      padding: 1rem 1.4rem;
-      border-radius: var(--rL);
-      box-shadow: var(--shadow-lg);
-      opacity: 0;
-      animation: floatIn .6s var(--ease-bounce) forwards;
-    }
-
-    .hero-float-1 {
-      bottom: 4rem;
-      right: 3rem;
-      animation-delay: 1.2s;
-    }
-
-    .hero-float-2 {
-      top: 35%;
-      right: 2rem;
-      animation-delay: 1.5s;
-    }
-
-    @keyframes floatIn {
-      from {
-        opacity: 0;
-        transform: translateY(15px) scale(.95);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    .hero-float-label {
-      font-size: .65rem;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: .2rem;
-    }
-
-    .hero-float-value {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      color: var(--rose);
-    }
-
-    .hero-float-stars {
-      color: var(--gold);
-      font-size: .9rem;
-      letter-spacing: 2px;
-    }
-
-    /* ══════════════════════════════════════════════════════
-       MARQUEE STRIP
-       ══════════════════════════════════════════════════════ */
-    .marquee-strip {
-      background: linear-gradient(135deg, var(--rose), var(--rose-dark));
-      overflow: hidden;
-      padding: .75rem 0;
-      display: flex;
-    }
-
-    .marquee-inner {
-      display: flex;
-      gap: 2.5rem;
-      animation: marquee 28s linear infinite;
-      white-space: nowrap;
-    }
-
-    @keyframes marquee {
-      from {
-        transform: translateX(0)
-      }
-
-      to {
-        transform: translateX(-50%)
-      }
-    }
-
-    .marquee-item {
-      font-size: .72rem;
-      letter-spacing: 3.5px;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, .9);
-      font-weight: 400;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-    }
-
-    .marquee-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, .5);
-      flex-shrink: 0;
-    }
-
-    /* ══════════════════════════════════════════════════════
-       SECTION COMMONS
-       ══════════════════════════════════════════════════════ */
-    .section {
-      padding: 7rem 5%;
-    }
-
+    /* ═══ SECTION BASE ═══ */
+    .section { padding:80px 24px; }
     .section-label {
-      font-size: .72rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--rose);
-      font-weight: 500;
-      margin-bottom: .8rem;
-      display: flex;
-      align-items: center;
-      gap: .85rem;
+      font-size:.72rem; letter-spacing:3px; text-transform:uppercase;
+      color:var(--rose); font-weight:600; margin-bottom:8px;
     }
-
-    .section-label::before {
-      content: '';
-      display: block;
-      width: 28px;
-      height: 1.5px;
-      background: linear-gradient(90deg, var(--rose), var(--gold));
-    }
-
     .section-title {
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      color: var(--ink);
-      margin-bottom: 1rem;
-      font-weight: 300;
+      font-size:clamp(1.8rem, 3vw, 2.6rem); color:var(--ink);
+      margin-bottom:16px; font-weight:300;
     }
+    .section-sub { color:var(--muted); max-width:500px; font-size:.95rem; line-height:1.8; }
 
-    .section-sub {
-      color: var(--muted);
-      max-width: 520px;
-      font-size: .98rem;
-      line-height: 1.8;
-    }
-
-    .section-header {
-      margin-bottom: 4rem;
-    }
-
-    .section-header.center {
-      text-align: center;
-    }
-
-    .section-header.center .section-label {
-      justify-content: center;
-    }
-
-    .section-header.center .section-label::before {
-      display: none;
-    }
-
-    .section-header.center .section-sub {
-      margin-inline: auto;
-    }
-
-    /* ══════════════════════════════════════════════════════
-       SERVICES
-       ══════════════════════════════════════════════════════ */
-    .services {
-      background: var(--white);
-    }
-
+    /* ═══ SERVICIOS (4 cards simples) ═══ */
+    .services { background:var(--white); }
     .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin-inline: auto;
+      display:grid; grid-template-columns:repeat(2,1fr);
+      gap:16px; max-width:900px; margin:40px auto 0;
+    }
+    .svc-card {
+      background:var(--cream); border-radius:var(--r); padding:32px 24px;
+      text-align:center; transition:transform .3s var(--ease), box-shadow .3s;
+    }
+    .svc-card:hover { transform:translateY(-4px); box-shadow:0 12px 30px rgba(196,114,138,.12); }
+    .svc-icon { font-size:2rem; margin-bottom:12px; }
+    .svc-name { font-family:var(--serif); font-size:1.3rem; margin-bottom:8px; }
+    .svc-desc { font-size:.88rem; color:var(--muted); line-height:1.7; }
+
+    /* ═══ POR QUÉ ELEGIRNOS ═══ */
+    .trust { background:var(--rose-pale); }
+    .trust-grid {
+      display:grid; grid-template-columns:repeat(2,1fr);
+      gap:20px; max-width:800px; margin:40px auto 0;
+    }
+    .trust-item {
+      display:flex; align-items:flex-start; gap:14px;
+      background:var(--white); border-radius:var(--r); padding:24px;
+    }
+    .trust-check {
+      width:28px; height:28px; border-radius:50%;
+      background:var(--rose); color:#fff;
+      display:grid; place-items:center; flex-shrink:0;
+      font-size:.85rem; font-weight:700;
+    }
+    .trust-text { font-size:.92rem; color:var(--ink); line-height:1.7; }
+    .trust-text strong { display:block; margin-bottom:2px; }
+
+    /* ═══ PRUEBA SOCIAL ═══ */
+    .social-proof { background:var(--white); }
+    .sp-quote {
+      max-width:680px; margin:0 auto 40px;
+      font-family:var(--serif); font-size:clamp(1.3rem,2.5vw,1.8rem);
+      color:var(--ink); line-height:1.6; text-align:center;
+      font-style:italic; position:relative;
+      padding:0 20px;
+    }
+    .sp-quote::before {
+      content:'"'; font-size:4rem; color:var(--rose-light);
+      position:absolute; top:-20px; left:0; line-height:1;
+    }
+    .sp-author {
+      text-align:center; font-size:.88rem; color:var(--muted);
+      margin-bottom:48px;
+    }
+    .sp-author strong { color:var(--rose); }
+    .sp-photos {
+      display:grid; grid-template-columns:repeat(4,1fr);
+      gap:8px; max-width:900px; margin:0 auto;
+    }
+    .sp-photo {
+      aspect-ratio:1; border-radius:var(--r); overflow:hidden;
+    }
+    .sp-photo img {
+      width:100%; height:100%; object-fit:cover;
+      transition:transform .5s var(--ease);
+    }
+    .sp-photo:hover img { transform:scale(1.06); }
+    .sp-ig-link {
+      display:block; text-align:center; margin-top:24px;
+      font-size:.85rem; color:var(--rose); font-weight:500;
+    }
+    .sp-ig-link:hover { text-decoration:underline; }
+
+    /* ═══ ANTES / DESPUÉS ═══ */
+    .ba { background:var(--cream); }
+    .ba-grid {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:16px; max-width:1000px; margin:40px auto 0;
+    }
+    .ba-card {
+      border-radius:var(--r); overflow:hidden;
+      box-shadow:0 4px 20px rgba(196,114,138,.1);
+    }
+    .ba-card img { width:100%; aspect-ratio:3/4; object-fit:cover; }
+    .ba-card-label {
+      background:var(--white); padding:14px 16px; text-align:center;
+      font-size:.82rem; color:var(--muted); letter-spacing:1px; text-transform:uppercase;
+    }
+
+    /* ═══ CTA FINAL ═══ */
+    .cta-final {
+      background:var(--ink); text-align:center;
+      position:relative; overflow:hidden;
+    }
+    .cta-final::before {
+      content:''; position:absolute; inset:0;
+      background:radial-gradient(ellipse 70% 50% at 50% 50%, rgba(196,114,138,.15) 0%, transparent 70%);
+    }
+    .cta-final > * { position:relative; z-index:2; }
+    .cta-final .section-title { color:#fff; }
+    .cta-final .section-sub { color:rgba(255,255,255,.5); margin:0 auto 32px; }
+    .cta-final-btn {
+      display:inline-flex; align-items:center; gap:10px;
+      background:var(--green-wa); color:#fff;
+      padding:18px 40px; border-radius:50px;
+      font-size:1.05rem; font-weight:600; border:none;
+      box-shadow:0 8px 30px rgba(37,211,102,.35);
+      transition:all .3s var(--ease);
     }
-
-    .service-card {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4/5;
-      cursor: pointer;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    }
-
-    .service-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 1s var(--ease), filter 1s var(--ease);
-    }
-
-    .service-card:hover img {
-      transform: scale(1.08);
-      filter: brightness(.85);
-    }
-
-    .service-card-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(30, 26, 28, .8) 0%, rgba(30, 26, 28, .1) 45%, transparent 65%);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 2.2rem;
-      transition: background .5s var(--ease);
-    }
-
-    .service-card:hover .service-card-overlay {
-      background: linear-gradient(to top, rgba(30, 26, 28, .85) 0%, rgba(30, 26, 28, .2) 50%, transparent 70%);
-    }
-
-    .service-card-num {
-      font-family: var(--serif);
-      font-size: 4rem;
-      font-weight: 300;
-      color: rgba(255, 255, 255, .08);
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      line-height: 1;
-    }
-
-    .service-card-label {
-      font-size: .68rem;
-      letter-spacing: 3.5px;
-      text-transform: uppercase;
-      color: var(--rose-light);
-      margin-bottom: .35rem;
-      opacity: .8;
-    }
-
-    .service-card-title {
-      font-family: var(--serif);
-      font-size: 1.7rem;
-      color: #fff;
-      font-weight: 300;
-      margin-bottom: .3rem;
-    }
-
-    .service-card-desc {
-      font-size: .85rem;
-      color: rgba(255, 255, 255, .7);
-      max-width: 280px;
-      line-height: 1.6;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all .45s var(--ease);
-    }
-
-    .service-card:hover .service-card-desc {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ══════════════════════════════════════════════════════
-       ALL SERVICES PILLS
-       ══════════════════════════════════════════════════════ */
-    .services-list {
-      background: var(--cream);
-    }
-
-    .services-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .65rem;
-      justify-content: center;
-      max-width: 900px;
-      margin: 3rem auto 0;
-    }
-
-    .pill {
-      padding: .55rem 1.4rem;
-      border-radius: 50px;
-      border: 1.5px solid var(--rose-light);
-      font-size: .82rem;
-      color: var(--ink);
-      background: var(--white);
-      transition: all .3s var(--ease);
-      cursor: default;
-      user-select: none;
-    }
-
-    .pill:hover {
-      background: var(--rose-light);
-      border-color: var(--rose-light);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-sm);
-    }
-
-    /* ══════════════════════════════════════════════════════
-       GALLERY
-       ══════════════════════════════════════════════════════ */
-    .gallery {
-      background: var(--white);
-      padding-bottom: 5rem;
-    }
-
-    /* Filter buttons */
-    .gallery-filters {
-      display: flex;
-      gap: .5rem;
-      justify-content: center;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .filter-btn {
-      padding: .45rem 1.2rem;
-      border-radius: 50px;
-      background: transparent;
-      border: 1.5px solid var(--rose-light);
-      font-size: .78rem;
-      font-weight: 500;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--muted);
-      transition: all .3s var(--ease);
-    }
-
-    .filter-btn:hover {
-      border-color: var(--rose);
-      color: var(--rose);
-    }
-
-    .filter-btn.active {
-      background: var(--rose);
-      border-color: var(--rose);
-      color: #fff;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-auto-rows: 230px;
-      gap: 5px;
-      max-width: 1400px;
-      margin-inline: auto;
-    }
-
-    .g-item {
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-      border-radius: 3px;
-    }
-
-    .g-item.tall {
-      grid-row: span 2;
-    }
-
-    .g-item.wide {
-      grid-column: span 2;
-    }
-
-    .g-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .7s var(--ease);
-    }
-
-    .g-item:hover img {
-      transform: scale(1.06);
-    }
-
-    .g-item::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(30, 26, 28, .6) 0%, transparent 50%);
-      opacity: 0;
-      transition: opacity .4s var(--ease);
-      pointer-events: none;
-    }
-
-    .g-item:hover::after {
-      opacity: 1;
-    }
-
-    .g-item-label {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: .8rem 1rem;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      z-index: 2;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: all .4s var(--ease);
-    }
-
-    .g-item:hover .g-item-label {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .g-item-label span {
-      font-family: var(--serif);
-      font-size: 1rem;
-      color: #fff;
-    }
-
-    .g-item-label .g-zoom {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, .2);
-      backdrop-filter: blur(6px);
-      display: grid;
-      place-items: center;
-    }
-
-    .g-zoom svg {
-      width: 14px;
-      height: 14px;
-      stroke: #fff;
-      fill: none;
-      stroke-width: 2;
-    }
-
-    /* ══════════════════════════════════════════════════════
-       LIGHTBOX
-       ══════════════════════════════════════════════════════ */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 2000;
-      background: rgba(15, 12, 14, .92);
-      backdrop-filter: blur(20px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: all .4s var(--ease);
-    }
-
-    .lightbox.open {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .lightbox img {
-      max-width: 85vw;
-      max-height: 85vh;
-      object-fit: contain;
-      border-radius: var(--r);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
-      transform: scale(.92);
-      opacity: 0;
-      transition: all .4s var(--ease-bounce);
-    }
-
-    .lightbox.open img {
-      transform: scale(1);
-      opacity: 1;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, .1);
-      border: none;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      transition: .3s;
-      font-size: 1.3rem;
-    }
-
-    .lightbox-close:hover {
-      background: rgba(255, 255, 255, .2);
-      transform: rotate(90deg);
-    }
-
-    .lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, .1);
-      border: none;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      transition: .3s;
-      font-size: 1.2rem;
-    }
-
-    .lightbox-nav:hover {
-      background: rgba(255, 255, 255, .2);
-    }
-
-    .lightbox-prev {
-      left: 1.5rem;
-    }
-
-    .lightbox-next {
-      right: 1.5rem;
-    }
-
-    .lightbox-counter {
-      position: absolute;
-      bottom: 1.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      color: rgba(255, 255, 255, .5);
-      font-size: .8rem;
-      letter-spacing: 2px;
-    }
-
-    /* ══════════════════════════════════════════════════════
-       ABOUT
-       ══════════════════════════════════════════════════════ */
-    .about {
-      background: var(--rose-pale);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .about-img-wrap {
-      position: relative;
-    }
-
-    .about-img-wrap img {
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      border-radius: var(--rXL);
-      box-shadow: var(--shadow-xl);
-    }
-
-    .about-img-badge {
-      position: absolute;
-      bottom: -1.2rem;
-      right: -1.2rem;
-      background: linear-gradient(135deg, var(--rose), var(--rose-dark));
-      color: #fff;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 12px 30px rgba(196, 114, 138, .4);
-    }
-
-    .about-img-badge .num {
-      font-family: var(--serif);
-      font-size: 2rem;
-      line-height: 1;
-    }
-
-    .about-img-badge .lbl {
-      font-size: .6rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      opacity: .85;
-    }
-
-    .about-text p {
-      color: var(--muted);
-      line-height: 1.9;
-      margin-bottom: 1.5rem;
-      font-size: .95rem;
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid rgba(196, 114, 138, .2);
-    }
-
-    .stat-num {
-      font-family: var(--serif);
-      font-size: 2.2rem;
-      color: var(--rose);
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: .75rem;
-      color: var(--muted);
-      letter-spacing: .5px;
-      margin-top: .3rem;
-    }
-
-    /* ══════════════════════════════════════════════════════
-       TESTIMONIALS
-       ══════════════════════════════════════════════════════ */
-    .testimonials {
-      background: var(--cream);
-    }
-
-    .testimonials-track {
-      display: flex;
-      gap: 1.5rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding-bottom: 1rem;
-      scrollbar-width: none;
-    }
-
-    .testimonials-track::-webkit-scrollbar {
-      display: none;
-    }
-
-    .testi-card {
-      background: var(--white);
-      border-radius: var(--rL);
-      padding: 2.2rem;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid rgba(196, 114, 138, .06);
-      min-width: 340px;
-      max-width: 380px;
-      flex-shrink: 0;
-      scroll-snap-align: start;
-      transition: all .35s var(--ease);
-    }
-
-    .testi-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .testi-stars {
-      color: var(--gold);
-      font-size: .9rem;
-      letter-spacing: 2px;
-      margin-bottom: 1.2rem;
-    }
-
-    .testi-text {
-      color: var(--muted);
-      font-size: .92rem;
-      line-height: 1.85;
-      margin-bottom: 1.5rem;
-      font-style: italic;
-    }
-
-    .testi-footer {
-      display: flex;
-      align-items: center;
-      gap: .75rem;
-    }
-
-    .testi-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--rose-light);
-      display: grid;
-      place-items: center;
-      font-family: var(--serif);
-      font-size: 1rem;
-      color: var(--rose);
-      font-weight: 500;
-    }
-
-    .testi-name {
-      font-family: var(--serif);
-      font-size: 1rem;
-      color: var(--ink);
-    }
-
-    .testi-service {
-      font-size: .7rem;
-      color: var(--rose);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    /* ══════════════════════════════════════════════════════
-       FAQ
-       ══════════════════════════════════════════════════════ */
-    .faq {
-      background: var(--white);
-    }
-
-    .faq-grid {
-      max-width: 800px;
-      margin-inline: auto;
-      display: flex;
-      flex-direction: column;
-      gap: .5rem;
-    }
-
-    .faq-item {
-      border: 1px solid var(--rose-light);
-      border-radius: var(--rL);
-      overflow: hidden;
-      background: var(--cream);
-      transition: all .3s var(--ease);
-    }
-
-    .faq-item:hover {
-      border-color: var(--rose);
-    }
-
-    .faq-item.open {
-      border-color: var(--rose);
-      background: var(--white);
-    }
-
-    .faq-question {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.4rem 1.8rem;
-      width: 100%;
-      background: none;
-      border: none;
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      color: var(--ink);
-      text-align: left;
-      cursor: pointer;
-      transition: color .2s;
-    }
-
-    .faq-question:hover {
-      color: var(--rose);
-    }
-
-    .faq-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--rose-light);
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      margin-left: 1rem;
-      transition: all .35s var(--ease);
-    }
-
-    .faq-item.open .faq-icon {
-      background: var(--rose);
-      transform: rotate(45deg);
-    }
-
-    .faq-icon svg {
-      width: 14px;
-      height: 14px;
-      stroke: var(--rose);
-      stroke-width: 2;
-      fill: none;
-      transition: stroke .3s;
-    }
-
-    .faq-item.open .faq-icon svg {
-      stroke: #fff;
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .45s var(--ease), padding .45s var(--ease);
-    }
-
-    .faq-item.open .faq-answer {
-      max-height: 300px;
-    }
-
-    .faq-answer-inner {
-      padding: 0 1.8rem 1.5rem;
-      color: var(--muted);
-      font-size: .92rem;
-      line-height: 1.85;
-    }
-
-    /* ══════════════════════════════════════════════════════
-       LOCATION & HOURS
-       ══════════════════════════════════════════════════════ */
-    .location {
-      background: var(--rose-pale);
-    }
-
-    .location-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      max-width: 1200px;
-      margin-inline: auto;
-      align-items: start;
-    }
-
-    .location-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .loc-block {}
-
-    .loc-block-title {
-      font-family: var(--serif);
-      font-size: 1.3rem;
-      color: var(--ink);
-      margin-bottom: .75rem;
-      display: flex;
-      align-items: center;
-      gap: .6rem;
-    }
-
-    .loc-block-title svg {
-      width: 20px;
-      height: 20px;
-      stroke: var(--rose);
-      fill: none;
-      stroke-width: 1.5;
-    }
-
-    .loc-block p,
-    .loc-block li {
-      color: var(--muted);
-      font-size: .9rem;
-      line-height: 1.8;
-    }
-
-    .hours-table {
-      display: grid;
-      gap: .4rem;
-    }
-
-    .hours-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: .5rem 0;
-      border-bottom: 1px solid rgba(196, 114, 138, .1);
-    }
-
-    .hours-row:last-child {
-      border-bottom: none;
-    }
-
-    .hours-day {
-      font-weight: 500;
-      color: var(--ink);
-      font-size: .9rem;
-    }
-
-    .hours-time {
-      color: var(--muted);
-      font-size: .88rem;
-    }
-
-    .hours-row.closed .hours-time {
-      color: var(--rose);
-      font-style: italic;
-    }
-
-    .location-map {
-      border-radius: var(--rXL);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      aspect-ratio: 4/3;
-      background: var(--rose-light);
-      display: grid;
-      place-items: center;
-    }
-
-    .location-map iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .map-placeholder {
-      text-align: center;
-      padding: 2rem;
-      color: var(--muted);
-    }
-
-    .map-placeholder svg {
-      width: 48px;
-      height: 48px;
-      stroke: var(--rose);
-      fill: none;
-      stroke-width: 1.5;
-      margin-bottom: 1rem;
-    }
-
-    /* ══════════════════════════════════════════════════════
-       BOOKING CTA
-       ══════════════════════════════════════════════════════ */
-    .booking {
-      background: var(--ink);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .booking::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 70% 50% at 50% 50%, rgba(196, 114, 138, .15) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201, 162, 112, .08) 0%, transparent 60%);
-    }
-
-    .booking>* {
-      position: relative;
-      z-index: 2;
-    }
-
-    .booking .section-label {
-      justify-content: center;
-      color: var(--rose-light);
-    }
-
-    .booking .section-label::before {
-      background: var(--rose-light);
-    }
-
-    .booking .section-title {
-      color: #fff;
-    }
-
-    .booking .section-sub {
-      color: rgba(255, 255, 255, .5);
-      margin-inline: auto;
-    }
-
-    .booking-cards {
-      display: flex;
-      justify-content: center;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-      margin-top: 3rem;
-    }
-
-    .booking-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: .8rem;
-      background: rgba(255, 255, 255, .05);
-      border: 1px solid rgba(255, 255, 255, .08);
-      padding: 2.2rem 2.8rem;
-      border-radius: var(--rXL);
-      transition: all .4s var(--ease);
-      cursor: pointer;
-      text-align: center;
-      max-width: 270px;
-    }
-
-    .booking-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
-    }
-
-    .booking-card-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-    }
-
-    .booking-card-icon svg {
-      width: 24px;
-      height: 24px;
-    }
-
-    .booking-card-title {
-      font-family: var(--serif);
-      font-size: 1.4rem;
-      color: #fff;
-    }
-
-    .booking-card-sub {
-      font-size: .8rem;
-      color: rgba(255, 255, 255, .45);
-      letter-spacing: .5px;
-    }
-
-    /* WhatsApp card */
-    .wsp {
-      background: rgba(37, 211, 102, .08) !important;
-      border-color: rgba(37, 211, 102, .15) !important;
-    }
-
-    .wsp:hover {
-      border-color: rgba(37, 211, 102, .4) !important;
-      background: rgba(37, 211, 102, .12) !important;
-    }
-
-    .wsp .booking-card-icon {
-      background: rgba(37, 211, 102, .15);
-    }
-
-    .wsp .booking-card-icon svg {
-      fill: var(--green-wa);
-    }
-
-    /* Instagram card */
-    .ig {
-      background: rgba(228, 64, 95, .06) !important;
-      border-color: rgba(228, 64, 95, .12) !important;
-    }
-
-    .ig:hover {
-      border-color: rgba(228, 64, 95, .35) !important;
-      background: rgba(228, 64, 95, .1) !important;
-    }
-
-    .ig .booking-card-icon {
-      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    }
-
-    .ig .booking-card-icon svg {
-      fill: #fff;
-    }
-
-    .booking-note {
-      color: rgba(255, 255, 255, .3);
-      font-size: .78rem;
-      margin-top: 2.5rem;
-      letter-spacing: .5px;
+    .cta-final-btn:hover { background:#1EBE5D; transform:translateY(-3px); }
+    .cta-final-btn svg { width:22px; height:22px; }
+    .cta-final-sub {
+      color:rgba(255,255,255,.35); font-size:.78rem; margin-top:20px;
+      letter-spacing:.5px;
     }
 
-    /* ══════════════════════════════════════════════════════
-       FOOTER
-       ══════════════════════════════════════════════════════ */
+    /* ═══ FOOTER ═══ */
     .footer {
-      background: var(--ink-soft);
-      color: rgba(255, 255, 255, .55);
-      padding: 4.5rem 5% 2rem;
+      background:var(--ink); color:rgba(255,255,255,.5);
+      padding:48px 24px 24px; text-align:center;
     }
+    .footer-brand { font-family:var(--serif); font-size:1.4rem; color:#fff; margin-bottom:12px; }
+    .footer-brand em { color:var(--rose); }
+    .footer-links-row { display:flex; justify-content:center; gap:24px; margin:16px 0; flex-wrap:wrap; }
+    .footer-links-row a { font-size:.85rem; transition:color .2s; }
+    .footer-links-row a:hover { color:#fff; }
+    .footer-copy { font-size:.75rem; margin-top:24px; padding-top:20px; border-top:1px solid rgba(255,255,255,.08); }
 
-    .footer-inner {
-      max-width: 1200px;
-      margin-inline: auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 4rem;
-      margin-bottom: 3rem;
-    }
-
-    .footer-brand-name {
-      font-family: var(--serif);
-      font-size: 1.7rem;
-      color: #fff;
-      margin-bottom: 1rem;
-    }
-
-    .footer-brand-name em {
-      color: var(--rose);
-      font-style: italic;
-    }
-
-    .footer-tagline {
-      font-size: .88rem;
-      line-height: 1.8;
-    }
-
-    .footer-social {
-      display: flex;
-      gap: .8rem;
-      margin-top: 1.5rem;
-    }
-
-    .footer-social a {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, .12);
-      display: grid;
-      place-items: center;
-      color: rgba(255, 255, 255, .6);
-      transition: all .3s;
-    }
-
-    .footer-social a svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    .footer-social a:hover {
-      background: var(--rose);
-      border-color: var(--rose);
-      color: #fff;
-    }
-
-    .footer-col-title {
-      font-family: var(--serif);
-      font-size: 1rem;
-      color: #fff;
-      margin-bottom: 1.2rem;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: .65rem;
-    }
-
-    .footer-links a {
-      font-size: .86rem;
-      transition: color .2s;
-    }
-
-    .footer-links a:hover {
-      color: #fff;
-    }
-
-    .footer-bottom {
-      max-width: 1200px;
-      margin-inline: auto;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, .06);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: .78rem;
-      flex-wrap: wrap;
-      gap: .5rem;
-    }
-
-    .footer-bottom-logo {
-      font-family: var(--serif);
-      color: var(--rose);
-      font-size: 1rem;
-    }
-
-    /* ══════════════════════════════════════════════════════
-       FLOATING WhatsApp BUTTON
-       ══════════════════════════════════════════════════════ */
+    /* ═══ WHATSAPP FLOTANTE ═══ */
     .wa-float {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      z-index: 500;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--green-wa);
-      display: grid;
-      place-items: center;
-      box-shadow: 0 6px 20px rgba(37, 211, 102, .4);
-      transition: all .3s var(--ease);
-      opacity: 0;
-      transform: translateY(20px);
+      position:fixed; bottom:24px; right:24px; z-index:800;
+      width:60px; height:60px; border-radius:50%;
+      background:var(--green-wa); color:#fff;
+      display:grid; place-items:center;
+      box-shadow:0 6px 24px rgba(37,211,102,.45);
+      transition:all .3s var(--ease);
+      animation:wa-pulse 2.5s ease-in-out infinite;
+    }
+    .wa-float:hover { transform:scale(1.1); box-shadow:0 10px 35px rgba(37,211,102,.5); }
+    .wa-float svg { width:28px; height:28px; }
+    @keyframes wa-pulse {
+      0%,100%{ box-shadow:0 6px 24px rgba(37,211,102,.45); }
+      50%{ box-shadow:0 6px 24px rgba(37,211,102,.45), 0 0 0 12px rgba(37,211,102,.12); }
     }
 
-    .wa-float.visible {
-      opacity: 1;
-      transform: translateY(0);
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width:900px) {
+      .hero { grid-template-columns:1fr; }
+      .hero-img { display:none; }
+      .hero-content { padding:100px 24px 60px; text-align:center; align-items:center; }
+      .hero-sub { margin-inline:auto; }
+      .hero-trust { justify-content:center; }
+      .hero-cta { width:100%; justify-content:center; font-size:1.05rem; padding:18px 24px; }
+
+      .services-grid { grid-template-columns:1fr 1fr; }
+      .trust-grid { grid-template-columns:1fr; }
+      .sp-photos { grid-template-columns:repeat(2,1fr); }
+      .ba-grid { grid-template-columns:1fr; max-width:400px; }
+      .nav-links { display:none; }
+      .nav-toggle { display:flex; }
     }
 
-    .wa-float:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 10px 30px rgba(37, 211, 102, .5);
-    }
-
-    .wa-float svg {
-      width: 26px;
-      height: 26px;
-      fill: #fff;
-    }
-
-    /* ══════════════════════════════════════════════════════
-       SCROLL ANIMATIONS
-       ══════════════════════════════════════════════════════ */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity .7s var(--ease), transform .7s var(--ease);
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-delay-1 {
-      transition-delay: .1s;
-    }
-
-    .reveal-delay-2 {
-      transition-delay: .2s;
-    }
-
-    .reveal-delay-3 {
-      transition-delay: .3s;
-    }
-
-    .reveal-delay-4 {
-      transition-delay: .4s;
-    }
-
-    .reveal-scale {
-      opacity: 0;
-      transform: scale(.95);
-      transition: opacity .6s var(--ease), transform .6s var(--ease);
-    }
-
-    .reveal-scale.visible {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    /* ══════════════════════════════════════════════════════
-       RESPONSIVE
-       ══════════════════════════════════════════════════════ */
-    @media (max-width:1024px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-right {
-        display: block;
-        min-height: 55vh;
-      }
-
-      .hero-left {
-        padding: 8rem 5% 5rem;
-      }
-
-      .hero-title {
-        font-size: clamp(2.5rem, 7vw, 4rem);
-      }
-
-      .about {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding: 5rem 5%;
-      }
-
-      .about-img-wrap {
-        max-width: 500px;
-      }
-
-      .about-img-badge {
-        right: .5rem;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .service-card.wide {
-        grid-column: span 2;
-      }
-
-      .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .location-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      .footer-inner {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width:768px) {
-      .nav-links {
-        display: none;
-      }
-
-      .nav-toggle {
-        display: flex;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-card {
-        aspect-ratio: 4/3;
-      }
-
-      .service-card.wide {
-        grid-column: span 1;
-        aspect-ratio: 4/3;
-        min-height: auto;
-      }
-
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 180px;
-      }
-
-      .g-item.wide {
-        grid-column: span 2;
-      }
-
-      .gallery-grid .g-item:nth-child(n+9) {
-        display: none;
-      }
-
-      .section {
-        padding: 5rem 5%;
-      }
-
-      .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .hero-actions .btn {
-        justify-content: center;
-      }
-
-      .about-stats {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-      }
-
-      .stat-num {
-        font-size: 1.8rem;
-      }
-
-      .testi-card {
-        min-width: 280px;
-      }
-
-      .booking-cards {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .booking-card {
-        max-width: 100%;
-        width: 100%;
-      }
-
-      .lightbox-nav {
-        display: none;
-      }
-    }
-
-    @media (max-width:480px) {
-      .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: 150px;
-      }
-
-      .gallery-filters {
-        gap: .4rem;
-      }
-
-      .filter-btn {
-        font-size: .7rem;
-        padding: .35rem .9rem;
-      }
-
-      .section {
-        padding: 4rem 5%;
-      }
-
-      .faq-question {
-        font-size: 1rem;
-        padding: 1.1rem 1.3rem;
-      }
-
-      .faq-answer-inner {
-        padding: 0 1.3rem 1.2rem;
-      }
-
-      .wa-float {
-        width: 50px;
-        height: 50px;
-        bottom: 1rem;
-        right: 1rem;
-      }
+    @media (max-width:500px) {
+      .services-grid { grid-template-columns:1fr; }
+      .section { padding:60px 20px; }
+      .hero-content { padding:90px 20px 50px; }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- Skip to content -->
-  <a href="#main" class="skip-link">Ir al contenido</a>
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav">
+  <a href="#inicio" class="nav-brand">RB Centro <strong>Estético</strong></a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#resultados">Resultados</a></li>
+    <li><a href="https://wa.me/59892123456?text=Hola%20Romina%2C%20quisiera%20agendar%20un%20turno%20%F0%9F%A4%8D" target="_blank" rel="noopener" class="nav-cta-link">Reservar Turno</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="#servicios" onclick="closeDrawer()">Servicios</a>
+  <a href="#resultados" onclick="closeDrawer()">Resultados</a>
+  <a href="https://wa.me/59892123456?text=Hola%20Romina%2C%20quisiera%20agendar%20un%20turno%20%F0%9F%A4%8D" target="_blank" rel="noopener" onclick="closeDrawer()">Reservar Turno</a>
+</div>
 
-  <!-- Scroll progress -->
-  <div class="scroll-progress" id="scrollProgress"></div>
+<!-- ═══════════════════════════════════════════════════════
+     1. HERO — Lo primero que ve. Tiene que vender en 5 seg.
+     ═══════════════════════════════════════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <h1 class="hero-title">
+      Realzá tu belleza con tratamientos <em>personalizados</em>
+    </h1>
+    <p class="hero-sub">
+      Atención profesional para que te sientas y te veas mejor. Resultados reales, turnos rápidos en Montevideo.
+    </p>
 
-  <!-- ═══ NAV ════════════════════════════════════════════════ -->
-  <nav class="nav" id="nav" role="navigation" aria-label="Navegación principal">
-    <a href="#inicio" class="nav-logo" aria-label="RB Centro Estético - Inicio">
-      <div class="nav-logo-mark"><span>RB</span></div>
-      <div class="nav-brand">Centro Estético · <strong>Romina Britos</strong></div>
+    <a href="https://wa.me/59892123456?text=Hola%20Romina%2C%20quisiera%20agendar%20un%20turno%20%F0%9F%A4%8D" target="_blank" rel="noopener" class="hero-cta">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+      Reservá tu turno por WhatsApp
     </a>
 
-    <ul class="nav-links">
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#galeria">Portfolio</a></li>
-      <li><a href="#nosotras">Nosotras</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#reservas" class="nav-cta">Reservar Turno</a></li>
-    </ul>
-
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- Mobile drawer -->
-  <div class="nav-drawer" id="navDrawer" role="dialog" aria-label="Menú de navegación">
-    <a href="#servicios" onclick="closeDrawer()">Servicios</a>
-    <a href="#galeria" onclick="closeDrawer()">Portfolio</a>
-    <a href="#nosotras" onclick="closeDrawer()">Nosotras</a>
-    <a href="#faq" onclick="closeDrawer()">Preguntas</a>
-    <a href="#reservas" onclick="closeDrawer()">Reservar Turno</a>
-    <div class="nav-drawer-socials">
-      <a href="https://www.instagram.com/rb.centroestetico_/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round">
-          <rect x="2" y="2" width="20" height="20" rx="5" />
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-        </svg>
-      </a>
-      <a href="https://wa.me/59892123456" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-          <path
-            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
-        </svg>
-      </a>
+    <div class="hero-trust">
+      <span class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        Atención personalizada
+      </span>
+      <span class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        Resultados reales
+      </span>
+      <span class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        Turnos rápidos
+      </span>
     </div>
   </div>
 
-  <!-- ═══ HERO ═══════════════════════════════════════════════ -->
-  <section class="hero" id="inicio" aria-label="Portada">
-    <div class="hero-left" id="main">
-      <p class="hero-eyebrow">Estética Avanzada</p>
-      <h1 class="hero-title">
-        Tu mirada,<br>
-        <em>redefinida.</em>
-      </h1>
-      <p class="hero-sub">
-        Extensiones de pestañas, uñas y tratamientos estéticos personalizados por Romina Britos. Resultados que hablan
-        por sí solos.
-      </p>
-      <div class="hero-actions">
-        <a href="#reservas" class="btn btn-rose">
-          Reservar Turno
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
-        <a href="#galeria" class="btn btn-outline">Ver Trabajos</a>
-      </div>
+  <div class="hero-img">
+    <img src="assets/rb.centroestetico_/DA1p4HGSYih/DA1p4HGSYih.jpg" alt="Extensiones de pestañas · Romina Britos" fetchpriority="high">
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     2. SERVICIOS — Simple, 4 máximo
+     ═══════════════════════════════════════════════════════ -->
+<section class="section services" id="servicios">
+  <div class="container text-center reveal">
+    <p class="section-label">Nuestros tratamientos</p>
+    <h2 class="section-title">Tratamientos pensados para vos, no genéricos</h2>
+  </div>
+  <div class="services-grid container">
+    <div class="svc-card reveal">
+      <div class="svc-icon">👁️</div>
+      <h3 class="svc-name">Pestañas y Cejas</h3>
+      <p class="svc-desc">Extensiones de pestañas (clásicas, volumen, híbridas), laminado y diseño de cejas para realzar tu mirada.</p>
     </div>
-
-    <div class="hero-right">
-      <img src="assets/rb.centroestetico_/DA1p4HGSYih/DA1p4HGSYih.jpg"
-        alt="Extensiones de pestañas por Romina Britos · RB Centro Estético" fetchpriority="high">
-
-      <div class="hero-float hero-float-1">
-        <div class="hero-float-label">Servicio estrella</div>
-        <div class="hero-float-value">Pestañas</div>
-      </div>
-      <div class="hero-float hero-float-2">
-        <div class="hero-float-label">Calificación</div>
-        <div class="hero-float-stars">★★★★★</div>
-      </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">💅</div>
+      <h3 class="svc-name">Uñas Esculpidas</h3>
+      <p class="svc-desc">Uñas en gel, nail art personalizado, chrome y diseños únicos que duran semanas.</p>
     </div>
-  </section>
-
-  <!-- ═══ MARQUEE ═══════════════════════════════════════════ -->
-  <div class="marquee-strip" aria-hidden="true">
-    <div class="marquee-inner" id="marqueeInner">
-      <span class="marquee-item">Extensiones de Pestañas</span><span class="marquee-dot"></span>
-      <span class="marquee-item">Diseño de Cejas</span><span class="marquee-dot"></span>
-      <span class="marquee-item">Uñas en Gel</span><span class="marquee-dot"></span>
-      <span class="marquee-item">Nail Art</span><span class="marquee-dot"></span>
-      <span class="marquee-item">Depilación Definitiva</span><span class="marquee-dot"></span>
-      <span class="marquee-item">Hifu 12D</span><span class="marquee-dot"></span>
-      <span class="marquee-item">Tratamientos Faciales</span><span class="marquee-dot"></span>
-      <span class="marquee-item">Laminado de Pestañas</span><span class="marquee-dot"></span>
-      <span class="marquee-item">Extensiones de Pestañas</span><span class="marquee-dot"></span>
-      <span class="marquee-item">Diseño de Cejas</span><span class="marquee-dot"></span>
-      <span class="marquee-item">Uñas en Gel</span><span class="marquee-dot"></span>
-      <span class="marquee-item">Nail Art</span><span class="marquee-dot"></span>
-      <span class="marquee-item">Depilación Definitiva</span><span class="marquee-dot"></span>
-      <span class="marquee-item">Hifu 12D</span><span class="marquee-dot"></span>
-      <span class="marquee-item">Tratamientos Faciales</span><span class="marquee-dot"></span>
-      <span class="marquee-item">Laminado de Pestañas</span><span class="marquee-dot"></span>
+    <div class="svc-card reveal">
+      <div class="svc-icon">✨</div>
+      <h3 class="svc-name">Tratamientos Faciales</h3>
+      <p class="svc-desc">Limpieza profunda, Hifu 12D y tratamientos rejuvenecedores para una piel radiante.</p>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">💆‍♀️</div>
+      <h3 class="svc-name">Corporales y Depilación</h3>
+      <p class="svc-desc">Depilación definitiva, tratamientos corporales y técnicas reductoras con resultados visibles.</p>
     </div>
   </div>
+</section>
 
-  <!-- ═══ SERVICES ══════════════════════════════════════════ -->
-  <section class="section services" id="servicios">
-    <div class="section-header center reveal">
-      <div class="section-label">Lo que hacemos</div>
-      <h2 class="section-title">Nuestros Servicios</h2>
-      <p class="section-sub">Cada tratamiento diseñado para potenciar tu versión más bella, con técnicas actualizadas y
-        materiales premium.</p>
-    </div>
-
-    <div class="services-grid">
-      <div class="service-card reveal-scale">
-        <img src="assets/rb.centroestetico_/B_yXIGnhH7o/B_yXIGnhH7o.jpg" alt="Extensiones de Pestañas" loading="lazy">
-        <span class="service-card-num">01</span>
-        <div class="service-card-overlay">
-          <p class="service-card-label">Servicio principal</p>
-          <h3 class="service-card-title">Extensiones de Pestañas</h3>
-          <p class="service-card-desc">Volumen ruso, clásicas e híbridas. Cada fibra colocada a mano para una mirada
-            natural e impactante.</p>
-        </div>
-      </div>
-
-      <div class="service-card reveal-scale">
-        <img src="assets/rb.centroestetico_/DBcB8OqyKMx/DBcB8OqyKMx_1.jpg" alt="Uñas en Gel · Nail Art" loading="lazy">
-        <span class="service-card-num">02</span>
-        <div class="service-card-overlay">
-          <p class="service-card-label">Nail art</p>
-          <h3 class="service-card-title">Uñas en Gel</h3>
-          <p class="service-card-desc">Diseños personalizados, chrome, glitter y más. Tu estilo en cada detalle.</p>
-        </div>
-      </div>
-
-      <div class="service-card reveal-scale">
-        <img src="assets/rb.centroestetico_/DC1srQoxv2P/DC1srQoxv2P_1.jpg" alt="Diseño de Cejas" loading="lazy">
-        <span class="service-card-num">03</span>
-        <div class="service-card-overlay">
-          <p class="service-card-label">Definición</p>
-          <h3 class="service-card-title">Diseño de Cejas</h3>
-          <p class="service-card-desc">Laminado y diseño con hilo para enmarcar tu mirada de forma natural.</p>
-        </div>
-      </div>
-
-      <div class="service-card reveal-scale">
-        <img src="assets/rb.centroestetico_/DF-wpttxPxl/DF-wpttxPxl_1.jpg" alt="Tratamientos Faciales · Hifu"
-          loading="lazy">
-        <span class="service-card-num">04</span>
-        <div class="service-card-overlay">
-          <p class="service-card-label">Bienestar</p>
-          <h3 class="service-card-title">Faciales &amp; Corporales</h3>
-          <p class="service-card-desc">Hifu 12D, depilación definitiva y tratamientos rejuvenecedores para tu piel.</p>
-        </div>
+<!-- ═══════════════════════════════════════════════════════
+     3. POR QUÉ ELEGIRNOS — Confianza
+     ═══════════════════════════════════════════════════════ -->
+<section class="section trust">
+  <div class="container text-center reveal">
+    <p class="section-label">Por qué elegirnos</p>
+    <h2 class="section-title">Cada detalle está cuidado para vos</h2>
+    <p class="section-sub" style="margin:0 auto;">
+      Una experiencia cómoda, segura y con resultados reales desde la primera sesión.
+    </p>
+  </div>
+  <div class="trust-grid container">
+    <div class="trust-item reveal">
+      <div class="trust-check">✓</div>
+      <div class="trust-text">
+        <strong>Atención personalizada</strong>
+        Cada tratamiento se adapta a tu estilo, tus facciones y lo que necesitás.
       </div>
     </div>
-  </section>
-
-  <!-- ═══ ALL SERVICES PILLS ════════════════════════════════ -->
-  <section class="section services-list">
-    <div class="section-header center reveal">
-      <div class="section-label">Todos nuestros servicios</div>
-      <h2 class="section-title">¿Qué estás buscando?</h2>
-      <p class="section-sub">Una amplia gama de tratamientos para el cuidado integral de tu belleza.</p>
-    </div>
-    <div class="services-pills reveal">
-      <span class="pill">Pestañas Volumen</span>
-      <span class="pill">Pestañas Clásicas</span>
-      <span class="pill">Pestañas Híbridas</span>
-      <span class="pill">Laminado de Pestañas</span>
-      <span class="pill">Diseño de Cejas</span>
-      <span class="pill">Laminado de Cejas</span>
-      <span class="pill">Uñas en Gel</span>
-      <span class="pill">Nail Art</span>
-      <span class="pill">Progresivos</span>
-      <span class="pill">Depilación Definitiva</span>
-      <span class="pill">Hifu 12D</span>
-      <span class="pill">Tratamientos Faciales</span>
-      <span class="pill">Tratamientos Corporales</span>
-    </div>
-  </section>
-
-  <!-- ═══ GALLERY ═══════════════════════════════════════════ -->
-  <section class="section gallery" id="galeria">
-    <div class="section-header center reveal">
-      <div class="section-label">Resultados reales</div>
-      <h2 class="section-title">Portfolio</h2>
-      <p class="section-sub">Cada foto es el resultado del trabajo y la dedicación de Romina Britos.</p>
-    </div>
-
-    <div class="gallery-filters reveal">
-      <button class="filter-btn active" data-filter="all">Todos</button>
-      <button class="filter-btn" data-filter="lashes">Pestañas</button>
-      <button class="filter-btn" data-filter="nails">Uñas</button>
-      <button class="filter-btn" data-filter="skin">Facial</button>
-    </div>
-
-    <div class="gallery-grid" id="galleryGrid">
-      <div class="g-item tall" data-cat="lashes">
-        <img src="assets/rb.centroestetico_/B_u8QRqhJpv/B_u8QRqhJpv.jpg" alt="Extensión Volumen" loading="lazy">
-        <div class="g-item-label">
-          <span>Extensión Volumen</span>
-          <div class="g-zoom"><svg viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="11" y1="8" x2="11" y2="14" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg></div>
-        </div>
-      </div>
-      <div class="g-item" data-cat="nails">
-        <img src="assets/rb.centroestetico_/DDh-5vEhMTX/DDh-5vEhMTX_1.jpg" alt="Uñas Gold" loading="lazy">
-        <div class="g-item-label">
-          <span>Gold &amp; Nude</span>
-          <div class="g-zoom"><svg viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="11" y1="8" x2="11" y2="14" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg></div>
-        </div>
-      </div>
-      <div class="g-item" data-cat="lashes">
-        <img src="assets/rb.centroestetico_/B_nY1ffBpzl/B_nY1ffBpzl.jpg" alt="Extensiones resultado" loading="lazy">
-        <div class="g-item-label">
-          <span>Resultado Final</span>
-          <div class="g-zoom"><svg viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="11" y1="8" x2="11" y2="14" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg></div>
-        </div>
-      </div>
-      <div class="g-item tall" data-cat="nails">
-        <img src="assets/rb.centroestetico_/DKsV-K9y7SN/DKsV-K9y7SN_1.jpg" alt="Leopard Nails" loading="lazy">
-        <div class="g-item-label">
-          <span>Leopard &amp; Gold</span>
-          <div class="g-zoom"><svg viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="11" y1="8" x2="11" y2="14" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg></div>
-        </div>
-      </div>
-      <div class="g-item wide" data-cat="lashes">
-        <img src="assets/rb.centroestetico_/DA1p4HGSYih/DA1p4HGSYih.jpg" alt="Pestañas close-up" loading="lazy">
-        <div class="g-item-label">
-          <span>Mirada Definida</span>
-          <div class="g-zoom"><svg viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="11" y1="8" x2="11" y2="14" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg></div>
-        </div>
-      </div>
-      <div class="g-item" data-cat="nails">
-        <img src="assets/rb.centroestetico_/DBcB8OqyKMx/DBcB8OqyKMx_1.jpg" alt="Chrome Nails" loading="lazy">
-        <div class="g-item-label">
-          <span>Chrome Nails</span>
-          <div class="g-zoom"><svg viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="11" y1="8" x2="11" y2="14" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg></div>
-        </div>
-      </div>
-      <div class="g-item" data-cat="lashes">
-        <img src="assets/rb.centroestetico_/B_55k4RBlCT/B_55k4RBlCT.jpg" alt="Extensiones" loading="lazy">
-        <div class="g-item-label">
-          <span>Extensiones</span>
-          <div class="g-zoom"><svg viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="11" y1="8" x2="11" y2="14" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg></div>
-        </div>
-      </div>
-      <div class="g-item" data-cat="nails">
-        <img src="assets/rb.centroestetico_/DKCNH1hOU0b/DKCNH1hOU0b.jpg" alt="Cow Print Nails" loading="lazy">
-        <div class="g-item-label">
-          <span>Cow Print</span>
-          <div class="g-zoom"><svg viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="11" y1="8" x2="11" y2="14" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg></div>
-        </div>
-      </div>
-      <div class="g-item" data-cat="nails">
-        <img src="assets/rb.centroestetico_/DBb_6ztymo3/DBb_6ztymo3_1.jpg" alt="Nail Art Colores" loading="lazy">
-        <div class="g-item-label">
-          <span>Rainbow Art</span>
-          <div class="g-zoom"><svg viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="11" y1="8" x2="11" y2="14" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg></div>
-        </div>
-      </div>
-      <div class="g-item" data-cat="skin">
-        <img src="assets/rb.centroestetico_/DF-wpttxPxl/DF-wpttxPxl_1.jpg" alt="Tratamiento Facial" loading="lazy">
-        <div class="g-item-label">
-          <span>Antes &amp; Después</span>
-          <div class="g-zoom"><svg viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="11" y1="8" x2="11" y2="14" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg></div>
-        </div>
-      </div>
-      <div class="g-item" data-cat="lashes">
-        <img src="assets/rb.centroestetico_/B-NtlDXBu1g/B-NtlDXBu1g.jpg" alt="Pestañas" loading="lazy">
-        <div class="g-item-label">
-          <span>Volumen Ruso</span>
-          <div class="g-zoom"><svg viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="11" y1="8" x2="11" y2="14" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg></div>
-        </div>
-      </div>
-      <div class="g-item" data-cat="lashes">
-        <img src="assets/rb.centroestetico_/CFC2a_oBN-O/CFC2a_oBN-O.jpg" alt="Proceso aplicación" loading="lazy">
-        <div class="g-item-label">
-          <span>Aplicación</span>
-          <div class="g-zoom"><svg viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="11" y1="8" x2="11" y2="14" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg></div>
-        </div>
+    <div class="trust-item reveal">
+      <div class="trust-check">✓</div>
+      <div class="trust-text">
+        <strong>Productos de calidad</strong>
+        Trabajamos solo con materiales premium para garantizar durabilidad y seguridad.
       </div>
     </div>
-  </section>
-
-  <!-- ═══ ABOUT ═════════════════════════════════════════════ -->
-  <section class="section about" id="nosotras">
-    <div class="about-img-wrap reveal">
-      <img src="assets/rb.centroestetico_/C-_S9UqscPe/C-_S9UqscPe_1.jpg" alt="Nuestro espacio · RB Centro Estético"
-        loading="lazy">
-      <div class="about-img-badge">
-        <span class="num">5+</span>
-        <span class="lbl">años</span>
+    <div class="trust-item reveal">
+      <div class="trust-check">✓</div>
+      <div class="trust-text">
+        <strong>Ambiente cálido y profesional</strong>
+        Un espacio diseñado para que te relajes y disfrutes de tu momento.
       </div>
     </div>
-    <div class="about-text reveal">
-      <div class="section-label">Sobre nosotras</div>
-      <h2 class="section-title">RB Centro Estético</h2>
-      <p>
-        Soy Romina Britos, técnica estética especializada en extensiones de pestañas y cuidado integral de la belleza.
-        Mi centro estético es un espacio diseñado para que te sientas cómoda, cuidada y completamente renovada.
-      </p>
-      <p>
-        Cada clienta es única, y cada tratamiento se adapta a tus facciones, estilo de vida y deseos. Trabajo con
-        materiales de alta calidad y técnicas actualizadas para garantizar resultados que superen tus expectativas.
-      </p>
-      <div class="about-stats">
-        <div>
-          <div class="stat-num" data-count="500">0</div>
-          <div class="stat-label">Clientas felices</div>
-        </div>
-        <div>
-          <div class="stat-num" data-count="10">0</div>
-          <div class="stat-label">Técnicas dominadas</div>
-        </div>
-        <div>
-          <div class="stat-num">5★</div>
-          <div class="stat-label">Calificación promedio</div>
-        </div>
+    <div class="trust-item reveal">
+      <div class="trust-check">✓</div>
+      <div class="trust-text">
+        <strong>Resultados desde la primera sesión</strong>
+        Vas a notar la diferencia desde tu primera visita. Sin exagerar, sin promesas vacías.
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══ TESTIMONIALS ══════════════════════════════════════ -->
-  <section class="section testimonials">
-    <div class="section-header reveal">
-      <div class="section-label">Lo que dicen</div>
-      <h2 class="section-title">Clientas que confían</h2>
-      <p class="section-sub">Testimonios reales de quienes ya vivieron la experiencia RB.</p>
+<!-- ═══════════════════════════════════════════════════════
+     4. PRUEBA SOCIAL — Lo más importante para convertir
+     ═══════════════════════════════════════════════════════ -->
+<section class="section social-proof" id="resultados">
+  <div class="container">
+    <div class="sp-quote reveal">
+      Mis clientas buscan sentirse seguras, cuidadas y verse mejor sin exagerar. Cada tratamiento está pensado para vos.
     </div>
-    <div class="testimonials-track reveal">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Las pestañas más lindas que me han hecho. Romina es muy profesional y el espacio es súper
-          cómodo. Voy a volver siempre!"</p>
-        <div class="testi-footer">
-          <div class="testi-avatar">V</div>
-          <div>
-            <div class="testi-name">Valentina M.</div>
-            <div class="testi-service">Extensiones de Pestañas</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Mis uñas quedaron increíbles, el diseño personalizado era exactamente lo que quería. Muy
-          recomendable."</p>
-        <div class="testi-footer">
-          <div class="testi-avatar">L</div>
-          <div>
-            <div class="testi-name">Lucía G.</div>
-            <div class="testi-service">Nail Art</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Llevo meses yendo a Romi para el mantenimiento de pestañas. El resultado siempre es
-          impecable y dura un montón."</p>
-        <div class="testi-footer">
-          <div class="testi-avatar">A</div>
-          <div>
-            <div class="testi-name">Antonella R.</div>
-            <div class="testi-service">Mantenimiento de Pestañas</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Me hice la depilación definitiva y desde la primera sesión noté resultados increíbles. El
-          espacio es impecable."</p>
-        <div class="testi-footer">
-          <div class="testi-avatar">C</div>
-          <div>
-            <div class="testi-name">Camila P.</div>
-            <div class="testi-service">Depilación Definitiva</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"El tratamiento de Hifu me dejó la piel como nueva. Romi es súper atenta y explica todo el
-          proceso."</p>
-        <div class="testi-footer">
-          <div class="testi-avatar">M</div>
-          <div>
-            <div class="testi-name">María José S.</div>
-            <div class="testi-service">Hifu 12D</div>
-          </div>
-        </div>
-      </div>
+    <p class="sp-author reveal">— <strong>Romina Britos</strong>, fundadora de RB Centro Estético</p>
+
+    <div class="sp-photos reveal">
+      <div class="sp-photo"><img src="assets/rb.centroestetico_/DA1p4HGSYih/DA1p4HGSYih.jpg" alt="Extensiones de pestañas" loading="lazy"></div>
+      <div class="sp-photo"><img src="assets/rb.centroestetico_/DBcB8OqyKMx/DBcB8OqyKMx_1.jpg" alt="Uñas chrome" loading="lazy"></div>
+      <div class="sp-photo"><img src="assets/rb.centroestetico_/DKsV-K9y7SN/DKsV-K9y7SN_1.jpg" alt="Nail art" loading="lazy"></div>
+      <div class="sp-photo"><img src="assets/rb.centroestetico_/C-_S9UqscPe/C-_S9UqscPe_1.jpg" alt="Nuestro espacio" loading="lazy"></div>
     </div>
-  </section>
+    <a href="https://www.instagram.com/rb.centroestetico_/" target="_blank" rel="noopener" class="sp-ig-link reveal">
+      Más fotos en @rb.centroestetico_ →
+    </a>
+  </div>
+</section>
 
-  <!-- ═══ FAQ ═══════════════════════════════════════════════ -->
-  <section class="section faq" id="faq">
-    <div class="section-header center reveal">
-      <div class="section-label">Preguntas Frecuentes</div>
-      <h2 class="section-title">Todo lo que necesitás saber</h2>
-      <p class="section-sub">Las dudas más comunes de nuestras clientas, resueltas.</p>
+<!-- ═══════════════════════════════════════════════════════
+     5. ANTES / DESPUÉS
+     ═══════════════════════════════════════════════════════ -->
+<section class="section ba">
+  <div class="container text-center reveal">
+    <p class="section-label">Resultados reales</p>
+    <h2 class="section-title">Antes y después</h2>
+    <p class="section-sub" style="margin:0 auto;">Fotos reales de clientas reales. Sin filtros, sin trucos.</p>
+  </div>
+  <div class="ba-grid container">
+    <div class="ba-card reveal">
+      <img src="assets/rb.centroestetico_/B_nY1ffBpzl/B_nY1ffBpzl.jpg" alt="Antes y después · Extensiones de Pestañas" loading="lazy">
+      <div class="ba-card-label">Extensiones de Pestañas</div>
     </div>
-
-    <div class="faq-grid">
-      <div class="faq-item reveal">
-        <button class="faq-question" aria-expanded="false">
-          ¿Cuánto duran las extensiones de pestañas?
-          <span class="faq-icon"><svg viewBox="0 0 24 24">
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <line x1="5" y1="12" x2="19" y2="12" />
-            </svg></span>
-        </button>
-        <div class="faq-answer" role="region">
-          <div class="faq-answer-inner">
-            Las extensiones de pestañas duran entre 3 y 4 semanas dependiendo de tu ciclo natural de crecimiento. Se
-            recomienda un mantenimiento (retoque) cada 2 a 3 semanas para mantenerlas siempre impecables.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-question" aria-expanded="false">
-          ¿Es doloroso el proceso de colocación?
-          <span class="faq-icon"><svg viewBox="0 0 24 24">
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <line x1="5" y1="12" x2="19" y2="12" />
-            </svg></span>
-        </button>
-        <div class="faq-answer" role="region">
-          <div class="faq-answer-inner">
-            No, para nada. El proceso es completamente indoloro. De hecho, muchas clientas se relajan tanto que se
-            quedan dormidas durante la sesión. Es un momento de desconexión total.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-question" aria-expanded="false">
-          ¿Las extensiones dañan mis pestañas naturales?
-          <span class="faq-icon"><svg viewBox="0 0 24 24">
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <line x1="5" y1="12" x2="19" y2="12" />
-            </svg></span>
-        </button>
-        <div class="faq-answer" role="region">
-          <div class="faq-answer-inner">
-            No, siempre y cuando la aplicación sea correcta. Trabajo con técnicas profesionales y adhesivos de calidad
-            que no comprometen la salud de tus pestañas naturales. Cada extensión se coloca individualmente respetando
-            la pestaña natural.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-question" aria-expanded="false">
-          ¿Cuánto dura una sesión de uñas en gel?
-          <span class="faq-icon"><svg viewBox="0 0 24 24">
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <line x1="5" y1="12" x2="19" y2="12" />
-            </svg></span>
-        </button>
-        <div class="faq-answer" role="region">
-          <div class="faq-answer-inner">
-            Una sesión de uñas en gel dura aproximadamente 1 hora y media a 2 horas, dependiendo del diseño elegido. Las
-            uñas duran entre 3 y 4 semanas en perfectas condiciones.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-question" aria-expanded="false">
-          ¿Qué es el Hifu 12D y para qué sirve?
-          <span class="faq-icon"><svg viewBox="0 0 24 24">
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <line x1="5" y1="12" x2="19" y2="12" />
-            </svg></span>
-        </button>
-        <div class="faq-answer" role="region">
-          <div class="faq-answer-inner">
-            El Hifu 12D es un tratamiento estético no invasivo que utiliza ultrasonido focalizado de alta intensidad
-            para tensar y rejuvenecer la piel. Es ideal para combatir la flacidez, definir el contorno facial y
-            estimular la producción natural de colágeno. Los resultados son visibles desde la primera sesión.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-question" aria-expanded="false">
-          ¿Cómo reservo un turno?
-          <span class="faq-icon"><svg viewBox="0 0 24 24">
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <line x1="5" y1="12" x2="19" y2="12" />
-            </svg></span>
-        </button>
-        <div class="faq-answer" role="region">
-          <div class="faq-answer-inner">
-            Podés reservar tu turno directamente por WhatsApp o por mensaje directo en Instagram. Respondemos lo antes
-            posible y coordinamos día y hora según tu disponibilidad. Se requiere seña para confirmar.
-          </div>
-        </div>
-      </div>
+    <div class="ba-card reveal">
+      <img src="assets/rb.centroestetico_/B_3ZgjphIg5/B_3ZgjphIg5.jpg" alt="Antes y después · Pestañas Volumen" loading="lazy">
+      <div class="ba-card-label">Pestañas Volumen</div>
     </div>
-  </section>
-
-  <!-- ═══ LOCATION & HOURS ═════════════════════════════════ -->
-  <section class="section location" id="ubicacion">
-    <div class="section-header reveal">
-      <div class="section-label">Encontranos</div>
-      <h2 class="section-title">Ubicación &amp; Horarios</h2>
-      <p class="section-sub">Te esperamos en nuestro espacio, diseñado especialmente para tu comodidad.</p>
+    <div class="ba-card reveal">
+      <img src="assets/rb.centroestetico_/B_55k4RBlCT/B_55k4RBlCT.jpg" alt="Antes y después · Pestañas" loading="lazy">
+      <div class="ba-card-label">Resultado Final</div>
     </div>
+  </div>
+</section>
 
-    <div class="location-grid">
-      <div class="location-info reveal">
-        <div class="loc-block">
-          <div class="loc-block-title">
-            <svg viewBox="0 0 24 24">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-            Dirección
-          </div>
-          <p>Consultá la ubicación exacta por WhatsApp o Instagram al coordinar tu turno.</p>
-        </div>
+<!-- ═══════════════════════════════════════════════════════
+     6. CTA FINAL — Repetido, claro
+     ═══════════════════════════════════════════════════════ -->
+<section class="section cta-final">
+  <p class="section-label" style="color:var(--rose-light);">Reservá ahora</p>
+  <h2 class="section-title">¿Querés asesoramiento personalizado?</h2>
+  <p class="section-sub">Escribime y te cuento todo sobre el tratamiento ideal para vos. Sin compromiso.</p>
 
-        <div class="loc-block">
-          <div class="loc-block-title">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-            Horarios de Atención
-          </div>
-          <div class="hours-table">
-            <div class="hours-row">
-              <span class="hours-day">Lunes</span>
-              <span class="hours-time">09:00 – 19:00</span>
-            </div>
-            <div class="hours-row">
-              <span class="hours-day">Martes</span>
-              <span class="hours-time">09:00 – 19:00</span>
-            </div>
-            <div class="hours-row">
-              <span class="hours-day">Miércoles</span>
-              <span class="hours-time">09:00 – 19:00</span>
-            </div>
-            <div class="hours-row">
-              <span class="hours-day">Jueves</span>
-              <span class="hours-time">09:00 – 19:00</span>
-            </div>
-            <div class="hours-row">
-              <span class="hours-day">Viernes</span>
-              <span class="hours-time">09:00 – 19:00</span>
-            </div>
-            <div class="hours-row">
-              <span class="hours-day">Sábado</span>
-              <span class="hours-time">09:00 – 14:00</span>
-            </div>
-            <div class="hours-row closed">
-              <span class="hours-day">Domingo</span>
-              <span class="hours-time">Cerrado</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="loc-block">
-          <div class="loc-block-title">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg>
-            Contacto rápido
-          </div>
-          <p>
-            <strong>WhatsApp:</strong> <a href="https://wa.me/59892123456" target="_blank" rel="noopener"
-              style="color:var(--rose);">Envianos un mensaje</a><br>
-            <strong>Instagram:</strong> <a href="https://www.instagram.com/rb.centroestetico_/" target="_blank"
-              rel="noopener" style="color:var(--rose);">@rb.centroestetico_</a>
-          </p>
-        </div>
-      </div>
-
-      <div class="location-map reveal">
-        <div class="map-placeholder">
-          <svg viewBox="0 0 24 24">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-            <circle cx="12" cy="10" r="3" />
-          </svg>
-          <p style="font-family:var(--serif); font-size:1.3rem; color:var(--ink); margin-bottom:.5rem;">RB Centro
-            Estético</p>
-          <p style="font-size:.85rem;">Coordiná tu visita por WhatsApp<br>y te compartimos la ubicación exacta.</p>
-          <a href="https://wa.me/59892123456?text=Hola%20Romina%2C%20quisiera%20saber%20la%20ubicaci%C3%B3n%20del%20centro%20%F0%9F%93%8D"
-            target="_blank" rel="noopener" class="btn btn-rose"
-            style="margin-top:1.5rem; font-size:.8rem; padding:.65rem 1.5rem;">
-            Consultar ubicación
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ BOOKING CTA ═══════════════════════════════════════ -->
-  <section class="section booking" id="reservas">
-    <div class="section-label">Reservas</div>
-    <h2 class="section-title" style="color:#fff;">¿Lista para tu cambio?</h2>
-    <p class="section-sub">Agendá tu turno directamente por WhatsApp o Instagram. Respondo a la brevedad.</p>
-
-    <div class="booking-cards">
-      <a href="https://wa.me/59892123456?text=Hola%20Romina%2C%20quisiera%20agendar%20un%20turno%20%F0%9F%A4%8D"
-        target="_blank" rel="noopener" class="booking-card wsp">
-        <div class="booking-card-icon">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
-          </svg>
-        </div>
-        <div class="booking-card-title">WhatsApp</div>
-        <div class="booking-card-sub">Rápido y directo</div>
-      </a>
-
-      <a href="https://www.instagram.com/rb.centroestetico_/" target="_blank" rel="noopener" class="booking-card ig">
-        <div class="booking-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-          </svg>
-        </div>
-        <div class="booking-card-title">Instagram DM</div>
-        <div class="booking-card-sub">@rb.centroestetico_</div>
-      </a>
-    </div>
-
-    <p class="booking-note">Lunes a Sábado · Con turno previo · Se requiere seña para confirmar</p>
-  </section>
-
-  <!-- ═══ FOOTER ════════════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div>
-        <div class="footer-brand-name">RB Centro <em>Estético</em></div>
-        <p class="footer-tagline">
-          Tu espacio de belleza en manos de Romina Britos. Extensiones de pestañas, uñas y tratamientos estéticos
-          personalizados.
-        </p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/rb.centroestetico_/" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-            </svg>
-          </a>
-          <a href="https://wa.me/59892123456" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-col-title">Servicios</div>
-        <ul class="footer-links">
-          <li><a href="#servicios">Extensiones de Pestañas</a></li>
-          <li><a href="#servicios">Uñas en Gel</a></li>
-          <li><a href="#servicios">Diseño de Cejas</a></li>
-          <li><a href="#servicios">Depilación Definitiva</a></li>
-          <li><a href="#servicios">Hifu 12D</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="footer-col-title">Navegación</div>
-        <ul class="footer-links">
-          <li><a href="#galeria">Portfolio</a></li>
-          <li><a href="#nosotras">Sobre Nosotras</a></li>
-          <li><a href="#faq">Preguntas Frecuentes</a></li>
-          <li><a href="#ubicacion">Ubicación</a></li>
-          <li><a href="#reservas">Reservar Turno</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span class="footer-bottom-logo">RB</span>
-      <span>&copy; 2026 RB Centro Estético · Romina Britos</span>
-    </div>
-  </footer>
-
-  <!-- ═══ FLOATING WhatsApp ═════════════════════════════════ -->
-  <a href="https://wa.me/59892123456?text=Hola%20Romina%2C%20quisiera%20consultar%20%F0%9F%A4%8D" target="_blank"
-    rel="noopener" class="wa-float" id="waFloat" aria-label="Contactar por WhatsApp">
-    <svg viewBox="0 0 24 24">
-      <path
-        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
-    </svg>
+  <a href="https://wa.me/59892123456?text=Hola%20Romina%2C%20quisiera%20asesoramiento%20personalizado%20%F0%9F%A4%8D" target="_blank" rel="noopener" class="cta-final-btn">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    Hablá conmigo por WhatsApp
   </a>
+  <p class="cta-final-sub">Lunes a Viernes 9–19h · Sábados 9–14h</p>
+</section>
 
-  <!-- ═══ LIGHTBOX ══════════════════════════════════════════ -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-label="Visor de imagen" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Cerrar">&times;</button>
-    <button class="lightbox-nav lightbox-prev" aria-label="Anterior">&#8249;</button>
-    <button class="lightbox-nav lightbox-next" aria-label="Siguiente">&#8250;</button>
-    <img src="" alt="">
-    <div class="lightbox-counter"></div>
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-brand">RB Centro <em>Estético</em></div>
+  <p>Tratamientos estéticos personalizados por Romina Britos · Montevideo</p>
+  <div class="footer-links-row">
+    <a href="https://www.instagram.com/rb.centroestetico_/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://wa.me/59892123456" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="#servicios">Servicios</a>
   </div>
+  <p class="footer-copy">&copy; 2026 RB Centro Estético · Romina Britos</p>
+</footer>
 
-  <!-- ═══ SCRIPTS ═══════════════════════════════════════════ -->
-  <script>
-    (function () {
-      'use strict';
+<!-- ═══ WHATSAPP FLOTANTE — Siempre visible ═══ -->
+<a href="https://wa.me/59892123456?text=Hola%20Romina%2C%20quisiera%20consultar%20%F0%9F%A4%8D" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
 
-      /* ── Scroll Progress Bar ─────────────────────────── */
-      const progressBar = document.getElementById('scrollProgress');
-      function updateProgress() {
-        const h = document.documentElement;
-        const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-        progressBar.style.width = pct + '%';
+<!-- ═══ JS — Solo lo esencial ═══ -->
+<script>
+(function(){
+  // Nav solid on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('solid', window.scrollY > 40);
+  }, { passive:true });
+
+  // Mobile drawer
+  const toggle = document.getElementById('navToggle');
+  const drawer = document.getElementById('navDrawer');
+  toggle.addEventListener('click', () => {
+    const open = !drawer.classList.contains('open');
+    toggle.classList.toggle('open', open);
+    drawer.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  window.closeDrawer = function(){
+    toggle.classList.remove('open');
+    drawer.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold:0.1, rootMargin:'0px 0px -30px 0px' });
+  reveals.forEach(el => io.observe(el));
+
+  // Smooth scroll with offset
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if(id === '#') return;
+      const t = document.querySelector(id);
+      if(t){
+        e.preventDefault();
+        window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 70, behavior:'smooth' });
       }
-
-      /* ── Nav solid on scroll ─────────────────────────── */
-      const nav = document.getElementById('nav');
-      const waFloat = document.getElementById('waFloat');
-      function handleScroll() {
-        const y = window.scrollY;
-        nav.classList.toggle('solid', y > 40);
-        waFloat.classList.toggle('visible', y > 400);
-        updateProgress();
-      }
-      window.addEventListener('scroll', handleScroll, { passive: true });
-      handleScroll();
-
-      /* ── Mobile menu ─────────────────────────────────── */
-      const toggle = document.getElementById('navToggle');
-      const drawer = document.getElementById('navDrawer');
-      toggle.addEventListener('click', () => {
-        const open = !drawer.classList.contains('open');
-        toggle.classList.toggle('open', open);
-        drawer.classList.toggle('open', open);
-        toggle.setAttribute('aria-expanded', open);
-        document.body.style.overflow = open ? 'hidden' : '';
-      });
-      window.closeDrawer = function () {
-        toggle.classList.remove('open');
-        drawer.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      };
-
-      /* ── Reveal on scroll ────────────────────────────── */
-      const reveals = document.querySelectorAll('.reveal, .reveal-scale');
-      const revealIO = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            revealIO.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-      reveals.forEach(el => revealIO.observe(el));
-
-      /* ── Counter animation ───────────────────────────── */
-      const counters = document.querySelectorAll('[data-count]');
-      const counterIO = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            const target = parseInt(e.target.dataset.count);
-            let current = 0;
-            const step = Math.ceil(target / 40);
-            const timer = setInterval(() => {
-              current += step;
-              if (current >= target) {
-                current = target;
-                clearInterval(timer);
-              }
-              e.target.textContent = current + '+';
-            }, 30);
-            counterIO.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.5 });
-      counters.forEach(el => counterIO.observe(el));
-
-      /* ── FAQ Accordion ───────────────────────────────── */
-      document.querySelectorAll('.faq-question').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const item = btn.closest('.faq-item');
-          const wasOpen = item.classList.contains('open');
-
-          // Close all
-          document.querySelectorAll('.faq-item.open').forEach(i => {
-            i.classList.remove('open');
-            i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-          });
-
-          // Toggle current
-          if (!wasOpen) {
-            item.classList.add('open');
-            btn.setAttribute('aria-expanded', 'true');
-          }
-        });
-      });
-
-      /* ── Gallery Filter ──────────────────────────────── */
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const galleryItems = document.querySelectorAll('.g-item');
-
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          filterBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          const filter = btn.dataset.filter;
-
-          galleryItems.forEach(item => {
-            if (filter === 'all' || item.dataset.cat === filter) {
-              item.style.display = '';
-              item.style.opacity = '0';
-              requestAnimationFrame(() => {
-                item.style.transition = 'opacity .4s var(--ease)';
-                item.style.opacity = '1';
-              });
-            } else {
-              item.style.opacity = '0';
-              setTimeout(() => { item.style.display = 'none'; }, 350);
-            }
-          });
-        });
-      });
-
-      /* ── Lightbox ────────────────────────────────────── */
-      const lightbox = document.getElementById('lightbox');
-      const lbImg = lightbox.querySelector('img');
-      const lbCounter = lightbox.querySelector('.lightbox-counter');
-      const lbClose = lightbox.querySelector('.lightbox-close');
-      const lbPrev = lightbox.querySelector('.lightbox-prev');
-      const lbNext = lightbox.querySelector('.lightbox-next');
-      let lbImages = [];
-      let lbIndex = 0;
-
-      function openLightbox(index) {
-        // Collect visible images
-        lbImages = [];
-        document.querySelectorAll('.g-item').forEach(item => {
-          if (item.style.display !== 'none') {
-            lbImages.push(item.querySelector('img').src);
-          }
-        });
-        lbIndex = index;
-        showLbImage();
-        lightbox.classList.add('open');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeLightbox() {
-        lightbox.classList.remove('open');
-        lightbox.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      }
-
-      function showLbImage() {
-        lbImg.src = lbImages[lbIndex];
-        lbImg.alt = 'Imagen ' + (lbIndex + 1);
-        lbCounter.textContent = (lbIndex + 1) + ' / ' + lbImages.length;
-      }
-
-      function lbPrevFn() {
-        lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length;
-        showLbImage();
-      }
-      function lbNextFn() {
-        lbIndex = (lbIndex + 1) % lbImages.length;
-        showLbImage();
-      }
-
-      galleryItems.forEach((item, i) => {
-        item.addEventListener('click', () => openLightbox(i));
-      });
-      lbClose.addEventListener('click', closeLightbox);
-      lbPrev.addEventListener('click', lbPrevFn);
-      lbNext.addEventListener('click', lbNextFn);
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox();
-      });
-      document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('open')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') lbPrevFn();
-        if (e.key === 'ArrowRight') lbNextFn();
-      });
-
-      /* ── Smooth anchor scroll offset ────────────────── */
-      document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', (e) => {
-          const id = a.getAttribute('href');
-          if (id === '#') return;
-          const target = document.querySelector(id);
-          if (target) {
-            e.preventDefault();
-            const offset = 80;
-            const y = target.getBoundingClientRect().top + window.scrollY - offset;
-            window.scrollTo({ top: y, behavior: 'smooth' });
-          }
-        });
-      });
-
-    })();
-  </script>
+    });
+  });
+})();
+</script>
 </body>
-
 </html>
